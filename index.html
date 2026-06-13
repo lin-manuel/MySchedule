@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prep Hub dashboard for study schedules, application positioning guides, and Masomo admissions resources.">
+  <title>Prep Hub | Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="site-shell">
+    <aside class="sidebar" id="site-sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">Prep Hub</span>
+        <span class="brand-name">Study command center</span>
+      </a>
+      <nav class="site-nav" aria-label="Guide navigation">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="pages/princeton_orfe_study_schedule.html">Master Study Schedule</a>
+        <a href="pages/princeton_orfe_positioning_guide.html">Princeton ORFE Positioning</a>
+        <a href="pages/dartmouth_positioning_intelligence.html">Dartmouth Positioning Intelligence</a>
+        <a href="pages/dartmouth_princeton_curriculum_guide.html">Dartmouth and Princeton Curriculum Guide</a>
+        <a href="pages/cs_math_full_guide.html">CS and Mathematics Guide</a>
+        <a href="pages/business_finance_full_guide.html">Business and Finance Guide</a>
+        <a href="pages/guitar_video_editing_guide.html">Guitar and Video Editing Guide</a>
+        <a href="#masomo-library">Masomo Resource Library</a>
+      </nav>
+      <div class="sidebar-tools">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light theme">Toggle theme</button>
+      </div>
+    </aside>
+
+    <div class="page-frame">
+      <header class="topbar">
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="site-sidebar" aria-expanded="false">Menu</button>
+        <div class="topbar-title">
+          <div class="crumb">Dashboard</div>
+          <div class="current-title">Prep Hub</div>
+        </div>
+        <label class="search-field">
+          <span>Search site</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Find guides, essays, SAT, visas">
+        </label>
+      </header>
+
+      <main id="main-content" class="content" tabindex="-1" data-search-scope>
+        <header class="dashboard-hero index-hero">
+          <div class="hero-copy">
+            <div class="eyebrow">Unified prep workspace</div>
+            <h1>Prep Hub</h1>
+            <p>One place for the full gap-year plan: technical study, Princeton ORFE positioning, Dartmouth strategy, business learning, creative skills, and the Masomo admissions library.</p>
+            <div class="hero-actions">
+              <a class="button-link primary-action" href="pages/princeton_orfe_study_schedule.html">Open schedule</a>
+              <a class="button-link" href="#masomo-library">Browse resources</a>
+            </div>
+          </div>
+
+          <section class="hero-panel" aria-label="Dashboard overview">
+            <div class="signal-card signal-primary">
+              <span>Primary target</span>
+              <strong>Princeton ORFE</strong>
+              <p>SCEA planning, ORFE-specific essays, faculty/course research, and systems-engineer positioning.</p>
+            </div>
+            <div class="signal-grid">
+              <div class="signal-card">
+                <span>Secondary target</span>
+                <strong>Dartmouth CS + Econ</strong>
+              </div>
+              <div class="signal-card">
+                <span>Core engine</span>
+                <strong>Math + CS block</strong>
+              </div>
+              <div class="signal-card">
+                <span>Library</span>
+                <strong>Masomo resources</strong>
+              </div>
+              <div class="signal-card">
+                <span>Output</span>
+                <strong>Essays + projects</strong>
+              </div>
+            </div>
+          </section>
+        </header>
+
+        <section class="dashboard-stats compact-stats" aria-label="Site stats">
+          <div class="dashboard-stat"><strong>7</strong><span>guide pages</span></div>
+          <div class="dashboard-stat"><strong>8</strong><span>resource categories</span></div>
+          <div class="dashboard-stat"><strong>31</strong><span>Masomo links surfaced</span></div>
+          <div class="dashboard-stat"><strong>1</strong><span>shared search bar</span></div>
+        </section>
+
+        <section class="section-block" aria-labelledby="guide-title">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Guides</span>
+              <h2 id="guide-title">Study and application dashboards</h2>
+            </div>
+            <p>Open the page that matches the work session you are in: schedule, positioning, coursework, business, or creative output.</p>
+          </div>
+
+          <div class="dashboard-grid guide-grid">
+            <a class="dashboard-card nav-card card-feature" href="pages/princeton_orfe_study_schedule.html" data-search-item>
+              <span class="card-eyebrow">Daily plan</span>
+              <h3>Master Study Schedule</h3>
+              <p>Daily timeline, weekly phases, application research, and hobby rhythm.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/princeton_orfe_positioning_guide.html" data-search-item>
+              <span class="card-eyebrow">Application strategy</span>
+              <h3>Princeton ORFE Positioning</h3>
+              <p>ORFE fit, SCEA strategy, essay angles, and the systems-engineer frame.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/dartmouth_positioning_intelligence.html" data-search-item>
+              <span class="card-eyebrow">Application strategy</span>
+              <h3>Dartmouth Positioning Intelligence</h3>
+              <p>Dartmouth values, D-Plan strategy, Kenyan context, and essay angles.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/dartmouth_princeton_curriculum_guide.html" data-search-item>
+              <span class="card-eyebrow">Curriculum map</span>
+              <h3>Dartmouth and Princeton Curriculum Guide</h3>
+              <p>Coursework, prerequisites, resources, and academic-fit research.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/cs_math_full_guide.html" data-search-item>
+              <span class="card-eyebrow">Technical curriculum</span>
+              <h3>CS and Mathematics Guide</h3>
+              <p>Python, algorithms, calculus, linear algebra, probability, and discrete math.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/business_finance_full_guide.html" data-search-item>
+              <span class="card-eyebrow">Business curriculum</span>
+              <h3>Business and Finance Guide</h3>
+              <p>Entrepreneurship, investing, corporate finance, marketing, and Kenya context.</p>
+            </a>
+            <a class="dashboard-card nav-card" href="pages/guitar_video_editing_guide.html" data-search-item>
+              <span class="card-eyebrow">Creative skills</span>
+              <h3>Guitar and Video Editing Guide</h3>
+              <p>Guitar growth and video production pipeline for Akili Code output.</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="masomo-library" class="section-block" aria-labelledby="masomo-title">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Masomo library</span>
+              <h2 id="masomo-title">Admissions resources by workflow</h2>
+            </div>
+            <p>Curated from <code>assets/pdfs/masomo/Masomo</code>. Use these as reference material alongside the guide pages.</p>
+          </div>
+
+          <div class="resource-grid">
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">START</span>
+                <h3>Application roadmap</h3>
+              </div>
+              <p>Use these first when planning the full US application sequence.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Step by Step Guide-20250516T192802Z-1-001/Step by Step Guide/1 Timeline.pdf"><span>PDF</span> Timeline</a>
+                <a href="assets/pdfs/masomo/Masomo/Step by Step Guide-20250516T192802Z-1-001/Step by Step Guide/3 What schools want.pdf"><span>PDF</span> What schools want</a>
+                <a href="assets/pdfs/masomo/Masomo/The Process-20250516T192816Z-1-001/The Process/College Application Process.pdf"><span>PDF</span> College Application Process</a>
+                <a href="assets/pdfs/masomo/Masomo/General Guides-20250516T192657Z-1-001/General Guides/New Horizons - A Guide to Applying to US Colleges.pdf"><span>PDF</span> New Horizons guide</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">FIT</span>
+                <h3>School research</h3>
+              </div>
+              <p>Pair these with the Princeton and Dartmouth positioning guides.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/General Guides-20250516T192657Z-1-001/General Guides/University Research Guide.pdf"><span>PDF</span> University Research Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/Insider Information-20250516T192736Z-1-001/Insider Information/Princeton Report 2.pdf"><span>PDF</span> Princeton Report</a>
+                <a href="assets/pdfs/masomo/Masomo/Insider Information-20250516T192736Z-1-001/Insider Information/Dartmouth Report.pptx"><span>PPTX</span> Dartmouth Report</a>
+                <a href="assets/pdfs/masomo/Masomo/Insider Information-20250516T192736Z-1-001/Insider Information/School Profiles.pdf"><span>PDF</span> School Profiles</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">ESSAY</span>
+                <h3>Personal statement</h3>
+              </div>
+              <p>Use when shaping the Common App narrative and first full drafts.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Essay Writing-20250516T192652Z-1-001/Essay Writing/Personal Statement Guide.pdf"><span>PDF</span> Personal Statement Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/Essay Writing-20250516T192652Z-1-001/Essay Writing/Sample Personal Statements.pdf"><span>PDF</span> Sample Personal Statements</a>
+                <a href="assets/pdfs/masomo/Masomo/Essay Writing-20250516T192652Z-1-001/Essay Writing/Picking a Topic, Outlining &amp; Writing a First Draft.pdf"><span>PDF</span> Topic, outline, first draft</a>
+                <a href="assets/pdfs/masomo/Masomo/Essay Writing-20250516T192652Z-1-001/Essay Writing/Why You Don’t Have to Write about Trauma in Your College Essay to Stand Out.pdf"><span>PDF</span> Trauma is not required</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">SUPP</span>
+                <h3>Supplemental essays</h3>
+              </div>
+              <p>Use for why-us, why-major, community, and intellectual vitality prompts.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Supplementary Essays-20250516T192808Z-1-001/Supplementary Essays/Why Us Essay.pdf"><span>PDF</span> Why Us Essay</a>
+                <a href="assets/pdfs/masomo/Masomo/Supplementary Essays-20250516T192808Z-1-001/Supplementary Essays/Why this Major.pdf"><span>PDF</span> Why this Major</a>
+                <a href="assets/pdfs/masomo/Masomo/Supplementary Essays-20250516T192808Z-1-001/Supplementary Essays/Intellectual Vitality.pdf"><span>PDF</span> Intellectual Vitality</a>
+                <a href="assets/pdfs/masomo/Masomo/Supplementary Essays-20250516T192808Z-1-001/Supplementary Essays/Supplemental Essays Examples.pdf"><span>PDF</span> Supplemental Essays Examples</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">ACT</span>
+                <h3>Activities and honors</h3>
+              </div>
+              <p>Useful for compressing technical projects into Common App language.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Honors-Activities-20250516T192702Z-1-001/Honors-Activities/Activities Guide.pdf"><span>PDF</span> Activities Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/Honors-Activities-20250516T192702Z-1-001/Honors-Activities/Activities Section.pdf"><span>PDF</span> Activities Section</a>
+                <a href="assets/pdfs/masomo/Masomo/Honors-Activities-20250516T192702Z-1-001/Honors-Activities/The Honors and Awards Section.pdf"><span>PDF</span> Honors and Awards</a>
+                <a href="assets/pdfs/masomo/Masomo/Honors-Activities-20250516T192702Z-1-001/Honors-Activities/Power Verbs.pdf"><span>PDF</span> Power Verbs</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">SAT</span>
+                <h3>SAT preparation</h3>
+              </div>
+              <p>Use with the Phase 1 schedule and Saturday full-test rhythm.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/SAT-20250516T192759Z-1-001/Digital SAT Specifications Overview.pdf"><span>PDF</span> Digital SAT overview</a>
+                <a href="assets/pdfs/masomo/Masomo/SAT-20250516T192759Z-1-001/SAT International Student Guide.pdf"><span>PDF</span> SAT International Student Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/SAT-20250516T192759Z-1-001/SAT/College Panda Math.pdf"><span>PDF</span> College Panda Math</a>
+                <a href="assets/pdfs/masomo/Masomo/SAT-20250516T192759Z-1-001/SAT/Erica  The Critical Reader.pdf"><span>PDF</span> The Critical Reader</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">REC</span>
+                <h3>Recommendations</h3>
+              </div>
+              <p>Use for counselor and teacher briefing packets.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Recommendations-20250516T192740Z-1-001/Recommendations/Guides/Approaching Rec Letters.pdf"><span>PDF</span> Approaching Rec Letters</a>
+                <a href="assets/pdfs/masomo/Masomo/Recommendations-20250516T192740Z-1-001/Recommendations/Guides/Counselor Rec Guide.pdf"><span>PDF</span> Counselor Rec Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/Recommendations-20250516T192740Z-1-001/Recommendations/Guides/Teacher Recommendation Letter Guide.pdf"><span>PDF</span> Teacher Rec Guide</a>
+              </div>
+            </article>
+
+            <article class="resource-category" data-search-item>
+              <div class="resource-category-head">
+                <span class="resource-code">NEXT</span>
+                <h3>LOCI, waitlist, visa</h3>
+              </div>
+              <p>Keep these close for deferrals, waitlists, and post-admission logistics.</p>
+              <div class="resource-links">
+                <a href="assets/pdfs/masomo/Masomo/Loci/[For Students] LOCI Examples - Updated in 2024.pdf"><span>PDF</span> LOCI examples</a>
+                <a href="assets/pdfs/masomo/Masomo/Loci/Student Resource - Deferral Guide 2024 (Client-Facing).pdf"><span>PDF</span> Deferral Guide</a>
+                <a href="assets/pdfs/masomo/Masomo/Visa Interviews-20250516T192847Z-1-001/Visa Interviews/Visa Prep.pdf"><span>PDF</span> Visa Prep</a>
+                <a href="assets/pdfs/masomo/Masomo/Visa Interviews-20250516T192847Z-1-001/Visa Interviews/Visa Interviews.pdf"><span>PDF</span> Visa Interviews</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="progress-board" aria-labelledby="progress-title">
+          <h2 id="progress-title">Launch checklist</h2>
+          <p>Saved locally in this browser.</p>
+          <div class="progress-grid">
+            <label><input class="progress" id="progress-open-schedule" type="checkbox"> Open the master schedule</label>
+            <label><input class="progress" id="progress-review-princeton" type="checkbox"> Review Princeton positioning</label>
+            <label><input class="progress" id="progress-map-masomo" type="checkbox"> Pick five Masomo resources</label>
+            <label><input class="progress" id="progress-essay-draft" type="checkbox"> Start the first essay draft</label>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">Static Prep Hub dashboard. All linked resources are local files in this workspace.</footer>
+    </div>
+  </div>
+</body>
+</html>
