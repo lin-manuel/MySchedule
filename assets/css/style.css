@@ -1282,3 +1282,528 @@ button.mb.on{background:var(--color-text-primary);color:var(--color-background-p
 .rhythm-day{font-size:11px;font-weight:700;min-width:90px;flex-shrink:0;padding-top:1px;}
 .rhythm-body{font-size:12px;line-height:1.6;color:var(--color-text-secondary);}
 .rhythm-body b{color:var(--color-text-primary);}
+
+/* Full-page polish layer */
+:root {
+  --bg: #0f1411;
+  --bg-soft: #141b17;
+  --surface: #18211d;
+  --surface-2: #202b26;
+  --surface-3: #2a3831;
+  --text: #f4f7f1;
+  --text-soft: #d1ddd4;
+  --text-muted: #93a398;
+  --border: #36473f;
+  --border-soft: #283630;
+  --accent: #3db58b;
+  --accent-strong: #64d3aa;
+  --accent-warm: #d9a441;
+  --accent-rose: #d4788d;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+  --radius-lg: 10px;
+  --princeton: #d9792a;
+  --princeton-bg: rgba(217, 121, 42, 0.1);
+  --princeton-bd: rgba(217, 121, 42, 0.3);
+  --dartmouth: #1fb276;
+  --dartmouth-bg: rgba(31, 178, 118, 0.12);
+  --dartmouth-bd: rgba(31, 178, 118, 0.34);
+  --col-app: var(--dartmouth);
+  --bg-app: var(--dartmouth-bg);
+}
+
+body.light {
+  --bg: #f6f8f2;
+  --bg-soft: #edf3ea;
+  --surface: #ffffff;
+  --surface-2: #f0f6ef;
+  --surface-3: #e5eee4;
+  --text: #17211b;
+  --text-soft: #43534a;
+  --text-muted: #66766d;
+  --border: #c9d8ce;
+  --border-soft: #dce7df;
+  --accent: #137a55;
+  --accent-strong: #0d6848;
+  --accent-warm: #98630d;
+  --accent-rose: #a83c59;
+  --princeton: #a95f1e;
+  --princeton-bg: rgba(169, 95, 30, 0.1);
+  --princeton-bd: rgba(169, 95, 30, 0.28);
+  --dartmouth: #00693e;
+  --dartmouth-bg: rgba(0, 105, 62, 0.1);
+  --dartmouth-bd: rgba(0, 105, 62, 0.28);
+}
+
+body {
+  background:
+    linear-gradient(135deg, rgba(31, 178, 118, 0.12), transparent 36rem),
+    linear-gradient(315deg, rgba(217, 121, 42, 0.08), transparent 32rem),
+    var(--bg);
+}
+
+.content,
+.footer {
+  width: min(1280px, calc(100% - 3rem));
+}
+
+.sidebar {
+  padding: 1.35rem;
+}
+
+.site-nav {
+  gap: 0.35rem;
+}
+
+.site-nav a {
+  padding: 0.76rem 0.82rem;
+  font-size: 0.92rem;
+}
+
+.topbar {
+  padding-block: 1rem;
+}
+
+.page-hero,
+.dashboard-hero {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.55rem;
+}
+
+h1 {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 4.5vw, 4.6rem);
+  letter-spacing: 0;
+}
+
+.page-hero p,
+.dashboard-hero p,
+.section-heading p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.dashboard-card,
+.resource-category,
+.progress-board,
+.dashboard-stat,
+.card,
+.theme-card,
+.prof-card,
+.essay-block,
+.dplan-step,
+.topic-card,
+.track-card,
+.week-card,
+.r-card,
+.school-intro,
+.domain-hero,
+.month-hero,
+.period-hero,
+.banner,
+.ph-banner,
+.sun-note {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
+}
+
+.dashboard-card,
+.resource-category {
+  padding: 1.15rem;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dashboard-card:hover,
+.resource-category:hover,
+.topic-card:hover,
+.r-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.16);
+}
+
+.guide-shell {
+  padding-bottom: 3rem;
+}
+
+.nav,
+.tabs,
+.top-tabs,
+.school-tabs,
+.dom-tabs,
+.r-school-tabs,
+.sub-tabs,
+.phs,
+.mbar,
+.month-bar {
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.nb,
+.tab,
+button.tb,
+button.tt,
+button.mb,
+button.dt,
+.school-btn,
+.rsbtn,
+.stb,
+.phb {
+  min-height: 38px;
+  border-color: var(--border);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  background: var(--surface-2);
+  color: var(--text-soft);
+  font-size: 0.84rem;
+  font-weight: 750;
+}
+
+.nb:hover,
+.stb:hover,
+.phb:hover,
+.rsbtn:hover,
+button.tb:hover,
+button.tt:hover,
+button.mb:hover,
+button.dt:hover,
+.school-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.nb.on,
+.rsbtn.d.on {
+  background: var(--dartmouth);
+  color: #ffffff;
+}
+
+.rsbtn.p.on {
+  background: var(--princeton);
+  color: #ffffff;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.52fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-d {
+  grid-column: 1 / -1;
+  border: 1px solid var(--dartmouth-bd);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--dartmouth-bg) 76%, var(--surface) 24%), var(--surface));
+  padding: clamp(1.2rem, 3vw, 2rem);
+}
+
+.hero-p {
+  grid-column: auto;
+  border: 1px solid var(--princeton-bd);
+  border-radius: var(--radius-lg);
+  background: var(--princeton-bg);
+  padding: 1.1rem 1.25rem;
+}
+
+.htag,
+.si-tag,
+.sec-lbl,
+.dl,
+.hb-lbl,
+.st-label,
+.section-label,
+.slabel,
+.wc-week,
+.week-label,
+.mh-label {
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.htitle {
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.hero-d .htitle {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.hsub,
+.si-sub,
+.ph-banner-b,
+.sun-note-b,
+.card-body,
+.card-b,
+.vbody,
+.essay-why,
+.week-how,
+.wc-how,
+.banner-b,
+.dh-sub,
+.mh-sub,
+.ph-sub,
+.res-desc,
+.ri,
+.dv,
+.hb-val,
+.tb2-sub,
+.tb2-note {
+  font-size: 0.94rem;
+  line-height: 1.72;
+}
+
+.hbadge {
+  border-radius: 999px;
+  padding: 0.38rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.stat-row,
+.stats,
+.dashboard-stats {
+  gap: 0.85rem;
+}
+
+.sc,
+.stat,
+.dashboard-stat {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--surface-2) 88%, var(--surface) 12%);
+  padding: 1rem 0.85rem;
+}
+
+.sv,
+.stat-v {
+  font-size: 1.45rem;
+  font-weight: 850;
+}
+
+.sl,
+.stat-l {
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.timeline {
+  gap: 0.75rem;
+}
+
+.tb2 {
+  grid-template-columns: 112px 4px 1fr;
+  gap: 1rem;
+  border-width: 1px;
+  padding: 1rem 1.1rem 1rem 0;
+}
+
+.tb2-time {
+  padding-left: 1rem;
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+.tb2-title {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.wgrid {
+  border-width: 1px;
+  overflow-x: auto;
+}
+
+.wg-h,
+.wg-row {
+  min-width: 860px;
+  grid-template-columns: 98px repeat(7, minmax(94px, 1fr));
+}
+
+.wg-hc,
+.wg-rl {
+  padding: 0.75rem 0.55rem;
+  font-size: 0.74rem;
+}
+
+.wg-cell {
+  padding: 0.42rem;
+}
+
+.chip {
+  min-height: 34px;
+  border-radius: 7px;
+  padding: 0.42rem 0.48rem;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.school-intro,
+.domain-hero,
+.month-hero,
+.period-hero,
+.banner,
+.ph-banner,
+.sun-note {
+  border-width: 1px;
+  padding: 1.15rem 1.3rem;
+}
+
+.si-title,
+.dh-title,
+.mh-title,
+.ph-title {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 850;
+}
+
+.r-card,
+.topic-card,
+.track-card,
+.week-card,
+.card,
+.essay-block,
+.resource-category,
+.dashboard-card {
+  border-width: 1px;
+}
+
+.rc-head,
+.topic-header {
+  padding: 1rem 1.1rem;
+}
+
+.rc-title,
+.topic-name,
+.track-title,
+.wc-topic,
+.card-title,
+.card-t,
+.vtitle,
+.essay-angle {
+  font-size: 1rem;
+  font-weight: 820;
+}
+
+.rc-sub,
+.topic-when,
+.track-sub {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.rc-body {
+  padding: 1rem 1.1rem;
+}
+
+.dg,
+.two,
+.two-col,
+.hb-grid,
+.st-grid {
+  gap: 0.8rem;
+}
+
+.dc,
+.hb-cell,
+.pc,
+.ep,
+.res-item,
+.prof-card,
+.week-item,
+.dplan-step {
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+}
+
+.split {
+  gap: 1rem;
+}
+
+.track-body {
+  padding: 1rem 1.1rem;
+}
+
+.week-item {
+  border: 1px solid var(--border-soft);
+  margin-bottom: 0.65rem;
+}
+
+.week-item:last-child {
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.res-item {
+  margin-bottom: 0.55rem;
+  border: 1px solid var(--border-soft);
+}
+
+.do-box,
+.dont-box,
+.do,
+.dont {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1rem;
+  font-size: 0.92rem;
+}
+
+body:not(.light) .do-box,
+body:not(.light) .do {
+  background: rgba(31, 178, 118, 0.14);
+  color: #a9f4d7;
+}
+
+body:not(.light) .dont-box,
+body:not(.light) .dont {
+  background: rgba(217, 121, 42, 0.14);
+  color: #ffd3ad;
+}
+
+@media (max-width: 760px) {
+  .content,
+  .footer {
+    width: min(100% - 1rem, 1280px);
+  }
+
+  .hero-grid,
+  .stat-row,
+  .stats,
+  .deadline-grid,
+  .dg,
+  .two,
+  .two-col,
+  .hb-grid,
+  .st-grid,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-d,
+  .hero-p {
+    grid-column: 1 / -1;
+  }
+
+  .tb2 {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .tb2-time {
+    padding-left: 0;
+  }
+
+  .tb2-bar {
+    width: 100%;
+    min-height: 3px;
+  }
+
+  .value-row,
+  .vrow,
+  .theme-row,
+  .rhythm-row {
+    flex-direction: column;
+  }
+}

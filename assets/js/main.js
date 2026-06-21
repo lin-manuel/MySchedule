@@ -175,7 +175,7 @@
   }
 
 
-  registerPage("princeton_orfe_study_schedule", function init_princeton_orfe_study_schedule() {
+  registerPage("dartmouth_cs_econ_study_schedule", function init_dartmouth_cs_econ_study_schedule() {
     const COL={
       cs:{c:'var(--col-cs)',bg:'var(--bg-cs)'},
       sat:{c:'var(--col-sat)',bg:'var(--bg-sat)'},
@@ -192,11 +192,11 @@
       {t:'7:00–7:45',h:'Exercise',s:'Run, walk, gym, or bodyweight. BDNF boost improves Block 1 quality for 2–3 hours. Never cut this.',c:'ex'},
       {t:'7:45–8:30',h:'Breakfast + Anki',s:'Eat a real meal. Anki deck: ORFE probability rules, calc formulas, SAT grammar, economics terms.',c:'rest'},
       {t:'8:30–9:00',h:'Morning prep',s:'Read confusion log from yesterday. Plan exactly what you will solve in Block 1 before you sit down.',c:'rest'},
-      {t:'9:00–1:00 PM',h:'Block 1 — Math & CS (4 hours)',s:'Hardest analytical material at your sharpest time. 50 min on / 10 min off × 4. No phone. Active recall only.',c:'cs',n:'The most protected block. Calculus → Linear Algebra → Probability → Algorithms. This sequence directly maps what Princeton ORFE expects in years 1–2.'},
+      {t:'9:00–1:00 PM',h:'Block 1 — Math & CS (4 hours)',s:'Hardest analytical material at your sharpest time. 50 min on / 10 min off × 4. No phone. Active recall only.',c:'cs',n:'The most protected block. Calculus → Linear Algebra → Probability → Algorithms. This sequence supports Dartmouth CS, the modified CS+Economics path, and Princeton ORFE as the secondary quant option.'},
       {t:'1:00–2:00 PM',h:'Lunch — complete stop',s:'No study. Eat, go outside briefly. Memory consolidation requires genuine disengagement.',c:'rest'},
       {t:'2:00–5:00 PM',h:'Block 2 (3 hours)',s:'SAT / Economics / Projects / Application work — rotates by phase and day. 50 min on / 10 min off × 3.',c:'biz',n:'See the Weekly tab for exactly what goes here each day.'},
       {t:'5:00–5:45 PM',h:'Guitar — daily practice',s:'45 minutes every weekday. Scales and chord transitions (Mon/Wed/Fri). Song practice and theory (Tue/Thu).',c:'guitar'},
-      {t:'5:45–7:15 PM',h:'University Research + Essays (1.5 h)',s:'Mon/Wed/Fri: Princeton ORFE research — professors, courses, ORF curriculum. Tue/Thu: Princeton essays (SCEA primary) + Dartmouth essays. See Research tab.',c:'app'},
+      {t:'5:45–7:15 PM',h:'Dartmouth Research + Essays (1.5 h)',s:'Mon/Wed/Fri: Dartmouth CS+Econ research — D-Plan, modified major, faculty, courses, DCSI. Tue/Thu: Dartmouth ED essays first, then Princeton ORFE notes. See Research tab.',c:'app'},
       {t:'7:15–8:00 PM',h:'Dinner',s:'Full meal. Wind-down begins after this point.',c:'rest'},
       {t:'8:00–9:00 PM',h:'Video editing practice (1 h)',s:'Mon/Wed/Fri: skill-building — tutorials, practice edits for Akili Code. Tue/Thu: free or extended guitar.',c:'video'},
       {t:'9:00–9:45 PM',h:'Hobby + free time (45 min)',s:'Guitar jam, reading, German for pleasure, bird watching content — anything not study.',c:'guitar'},
@@ -206,12 +206,12 @@
       {t:'6:30–7:00',h:'Wake',s:'No phone. Water. Journal.',c:'rest'},
       {t:'7:00–7:45',h:'Exercise',s:'Shorter Saturday — 30 min walk or light bodyweight.',c:'ex'},
       {t:'7:45–8:30',h:'Breakfast',s:'Slower morning. No Anki pressure.',c:'rest'},
-      {t:'9:00–11:00',h:'SAT Full Practice Test (Ph 1) / Math Review (Ph 2+)',s:'Phase 1: one complete official SAT, strict timed. Score and log errors immediately. Phase 2+: ORFE prep maths or algorithms.',c:'sat'},
+      {t:'9:00–11:00',h:'SAT Full Practice Test (Ph 1) / Math Review (Ph 2+)',s:'Phase 1: one complete official SAT, strict timed. Score and log errors immediately. Phase 2+: CS+Econ prep maths, algorithms, or application polish.',c:'sat'},
       {t:'11:15–12:15',h:'SAT error review / Math continuation',s:'Phase 1: categorise every wrong answer. Phase 2+: continue maths or LeetCode.',c:'cs'},
       {t:'12:15–1:30',h:'Lunch + rest',s:'Longer break. Go outside.',c:'rest'},
       {t:'1:30–3:00 PM',h:'Guitar — extended Saturday session (1.5 h)',s:'Full practice session: scales, chord work, song of the week, improvisation or music theory.',c:'guitar'},
       {t:'3:00–4:00 PM',h:'Video editing — project',s:'Edit a real piece: Akili Code reel, project demo, or tutorial clip.',c:'video'},
-      {t:'4:00–5:00 PM',h:'University research (1 h)',s:'Princeton: one professor page in depth, one ORF course, or note-banking for "Why Princeton." Dartmouth: alternate from Phase 2.',c:'app'},
+      {t:'4:00–5:00 PM',h:'University research (1 h)',s:'Dartmouth: one professor page, one COSC/ECON course, one D-Plan note, or "Why Dartmouth" note-bank. Princeton alternates after the ED core is strong.',c:'app'},
       {t:'5:00–7:00 PM',h:'Free time',s:'Genuinely free. Walk, friends, cooking, music.',c:'rest'},
       {t:'7:00+',h:'Evening — rest',s:'Dinner. No study after 7 PM on Saturdays.',c:'rest'},
     ];
@@ -229,30 +229,30 @@
     const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
     const PHASES=[
       {l:'Phase 1',p:'Jun–Aug 2026',c:'sat',
-       note:'SAT dominates Block 2. Block 1 is pure Calculus + Python — foundational for ORFE. Guitar every afternoon. Princeton research begins Mon/Wed/Fri evenings.',
+       note:'SAT dominates Block 2. Block 1 is pure Calculus + Python — foundational for Dartmouth CS and the modified CS+Economics plan. Guitar every afternoon. Dartmouth research begins Mon/Wed/Fri evenings.',
        rows:{
          'B1 9–1':{Mon:'Calculus+Python',Tue:'Calculus+Python',Wed:'Calculus+DS',Thu:'Calculus+Python',Fri:'CS review+LA',Sat:'SAT/Calc review',Sun:'Guitar+rest'},
          'B2 2–5':{Mon:'SAT Math',Tue:'SAT Reading',Wed:'SAT Math',Thu:'SAT Writing',Fri:'Python projects',Sat:'SAT errors/proj',Sun:'—'},
          'Guitar':{Mon:'Scales+chords',Tue:'Song practice',Wed:'Scales+chords',Thu:'Theory+song',Fri:'Free play',Sat:'Extended 1.5h',Sun:'Main 2–3h'},
-         'Research':{Mon:'Princeton res.',Tue:'Princeton essay',Wed:'Princeton res.',Thu:'Princeton essay',Fri:'Princeton res.',Sat:'Uni research 1h',Sun:'—'},
+         'Research':{Mon:'Dartmouth res.',Tue:'Dartmouth notes',Wed:'Dartmouth D-Plan',Thu:'Dartmouth essay',Fri:'Dartmouth res.',Sat:'Uni research 1h',Sun:'—'},
          'Eve 8–9':{Mon:'Video editing',Tue:'Free/guitar',Wed:'Video editing',Thu:'Free/guitar',Fri:'Video editing',Sat:'Free',Sun:'Free/guitar'},
        }},
       {l:'Phase 2',p:'Sep–Oct 2026',c:'app',
-       note:'SAT done. Princeton SCEA application sprint. CS deepens into Linear Algebra and Algorithms — core ORFE prerequisites. Dartmouth essays start Tue/Thu.',
+       note:'SAT done. Dartmouth Early Decision sprint. CS deepens into Linear Algebra and Algorithms, while essays lock the D-Plan, modified CS+Economics degree, and Akili Code narrative. Princeton remains a researched secondary track.',
        rows:{
          'B1 9–1':{Mon:'CS+Linear Alg.',Tue:'CS+Linear Alg.',Wed:'CS+Algorithms',Thu:'CS+Probability',Fri:'CS review+LA',Sat:'CS projects',Sun:'Guitar+rest'},
          'B2 2–5':{Mon:'Data Structures',Tue:'Algorithms+LC',Wed:'Application work',Thu:'Econ fundamentals',Fri:'LeetCode+review',Sat:'Proj/application',Sun:'—'},
          'Guitar':{Mon:'Scales+chords',Tue:'Song practice',Wed:'Scales+new chord',Thu:'Theory+song',Fri:'Free play',Sat:'Extended 1.5h',Sun:'Main 2–3h'},
-         'Research':{Mon:'Princeton ORFE',Tue:'Princeton essays',Wed:'Princeton ORFE',Thu:'Dartmouth essays',Fri:'App review',Sat:'App polish',Sun:'—'},
+         'Research':{Mon:'Dartmouth CS/Econ',Tue:'Dartmouth essays',Wed:'D-Plan+DCSI',Thu:'Dartmouth essays',Fri:'ED app review',Sat:'ED app polish',Sun:'—'},
          'Eve 8–9':{Mon:'Video editing',Tue:'Free/guitar',Wed:'Video editing',Thu:'Free/guitar',Fri:'Video editing',Sat:'Free',Sun:'Free/guitar'},
        }},
       {l:'Phase 3',p:'Nov–Dec 2026',c:'cs',
-       note:'Princeton SCEA submitted. Dartmouth app polish begins (CS+Econ emphasis). CS advances into Algorithms and Discrete Math.',
+       note:'Dartmouth ED submitted by November 1. If admitted in mid-December, withdraw other applications and celebrate. If deferred or denied, Princeton ORFE and other RD applications move into full polish while CS advances into Algorithms and Discrete Math.',
        rows:{
          'B1 9–1':{Mon:'CS+Algorithms',Tue:'CS+Probability',Wed:'CS+Discrete Math',Thu:'CS+Stats',Fri:'CS review',Sat:'CS projects',Sun:'Guitar+rest'},
          'B2 2–5':{Mon:'Econ fundamentals',Tue:'Corporate finance',Wed:'LeetCode medium',Thu:'CS project',Fri:'CS build+GitHub',Sat:'Projects/review',Sun:'—'},
          'Guitar':{Mon:'Scales+first song',Tue:'Song practice',Wed:'Theory+chords',Thu:'Song+improv.',Fri:'Free play',Sat:'Extended 1.5h',Sun:'Main 2–3h'},
-         'Research':{Mon:'LOCI if deferred',Tue:'Dartmouth essay',Wed:'Dartmouth essay',Thu:'Dartmouth essay',Fri:'Reflection+plan',Sat:'Dartmouth res.',Sun:'—'},
+         'Research':{Mon:'ED follow-up',Tue:'Princeton essay',Wed:'Princeton ORFE',Thu:'RD app polish',Fri:'Reflection+plan',Sat:'Princeton res.',Sun:'—'},
          'Eve 8–9':{Mon:'Video editing',Tue:'Free/guitar',Wed:'Video editing',Thu:'Free/guitar',Fri:'Video+Akili',Sat:'Free',Sun:'Free/guitar'},
        }},
       {l:'Phase 4',p:'Jan–Apr 2027',c:'biz',
@@ -267,7 +267,7 @@
     ];
     const ROW_COLS={'B1 9–1':'cs','B2 2–5':'biz','Guitar':'guitar','Research':'app','Eve 8–9':'video'};
     
-    let TAB='Day',DAY='weekday',PH=0,SCH='princeton';
+    let TAB='Day',DAY='weekday',PH=0,SCH='dartmouth';
     const OPEN=new Set();
     
     function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!==undefined)e.innerHTML=html;return e;}
@@ -382,11 +382,11 @@
     
     function renderResearch(root){
       const tabs=el('div','r-school-tabs');
-      const pb=el('button','rsbtn p '+(SCH==='princeton'?'on':''));pb.innerHTML='<i class="ti ti-trophy" aria-hidden="true" style="font-size:13px;margin-right:4px;vertical-align:-1px"></i>Princeton · ORFE';
       const db=el('button','rsbtn d '+(SCH==='dartmouth'?'on':''));db.innerHTML='<i class="ti ti-trees" aria-hidden="true" style="font-size:13px;margin-right:4px;vertical-align:-1px"></i>Dartmouth · CS+Econ';
-      pb.onclick=()=>{SCH='princeton';render();};
+      const pb=el('button','rsbtn p '+(SCH==='princeton'?'on':''));pb.innerHTML='<i class="ti ti-trophy" aria-hidden="true" style="font-size:13px;margin-right:4px;vertical-align:-1px"></i>Princeton · ORFE';
       db.onclick=()=>{SCH='dartmouth';render();};
-      tabs.appendChild(pb);tabs.appendChild(db);
+      pb.onclick=()=>{SCH='princeton';render();};
+      tabs.appendChild(db);tabs.appendChild(pb);
       root.appendChild(tabs);
       if(SCH==='princeton') renderPrinceton(root);
       else renderDartmouth(root);
@@ -395,12 +395,12 @@
     function renderPrinceton(root){
       const intro=el('div','school-intro');
       intro.style.cssText='background:var(--princeton-bg);border-color:var(--princeton-bd);';
-      intro.innerHTML=`<div class="si-tag" style="color:var(--princeton)">Single-Choice Early Action · Primary target</div><div class="si-title" style="color:var(--princeton)">Princeton University<br>ORFE — Operations Research & Financial Engineering</div><div class="si-sub" style="color:var(--princeton)">ORFE sits at the intersection of applied mathematics, probability, optimisation, and financial modelling. It is Princeton's most technically rigorous undergraduate degree and maps directly onto your trajectory: quantitative problem-solving, entrepreneurship through a systems lens, and building things that work under uncertainty.</div>`;
+      intro.innerHTML=`<div class="si-tag" style="color:var(--princeton)">Secondary application · SCEA only if Dartmouth ED is not pursued</div><div class="si-title" style="color:var(--princeton)">Princeton University<br>ORFE — Operations Research & Financial Engineering</div><div class="si-sub" style="color:var(--princeton)">ORFE remains a strong second-choice story: applied mathematics, probability, optimisation, and financial modelling connect naturally to the routing-engine project and Akili Code's systems-builder direction. The point is not to erase Princeton; it is to make it a coherent secondary quant-finance and operations-research option behind Dartmouth.</div>`;
       root.appendChild(intro);
     
       const snote=el('div','s-note');
       snote.style.cssText='background:var(--princeton-bg);border-color:var(--princeton-bd);color:var(--princeton);';
-      snote.innerHTML='<strong>Research schedule:</strong> Mon/Wed/Fri evenings (5:45–7:15 PM) dedicated to Princeton during Phase 1 & 2. Tue/Thu: essay drafting. Saturdays (4:00–5:00 PM): deep professor dives or course catalog work.';
+      snote.innerHTML='<strong>Research schedule:</strong> Princeton receives lighter but serious attention after the Dartmouth ED note-bank is solid. Use Phase 2 Saturdays and Phase 3 evenings for ORFE faculty, courses, independent work, and RD essay polish.';
       root.appendChild(snote);
     
       const sl1=el('div','sec-lbl','Why ORFE fits you');root.appendChild(sl1);
@@ -447,28 +447,28 @@
     
       const sl4=el('div','sec-lbl','Essay strategy');root.appendChild(sl4);
     
-      root.appendChild(accordion('✍️','Essay strategy','var(--princeton)','Princeton "Why Princeton?" essay (650 words)','The essay that will determine your SCEA outcome','p-essay',body=>{
+      root.appendChild(accordion('✍️','Essay strategy','var(--princeton)','Princeton "Why Princeton?" essay (650 words)','A credible secondary-school essay with a distinct ORFE thesis','p-essay',body=>{
         const ep=el('div','ep');
         ep.innerHTML=`<div class="ep-lbl" style="color:var(--princeton)">Prompt</div>Princeton asks why you are specifically drawn to Princeton — your academic interests, how they connect to specific programs or faculty, and what you will contribute to the community.`;
         body.appendChild(ep);
         body.appendChild(dg([
-          ['Structure that works','<strong>Open:</strong> A specific intellectual moment — a problem that made you want to study optimisation or probability. Not a childhood story. A real recent moment.<br><br><strong>Middle:</strong> Name ORFE explicitly. Reference 2 specific courses. Name 1–2 professors and connect their work to your genuine interest. Use words like "stochastic," "optimisation," "eigenvalue" correctly.<br><br><strong>Close:</strong> Akili Code + ORFE = a Kenyan building algorithmic tools for African educational access. What Princeton gives you that nowhere else does.'],
+          ['Structure that works','<strong>Open:</strong> A specific intellectual moment — a problem that made you want to study optimisation or probability. Not a childhood story. A real recent moment.<br><br><strong>Middle:</strong> Name ORFE explicitly. Reference 2 specific courses. Name 1–2 professors and connect their work to your genuine interest. Use words like "stochastic," "optimisation," "eigenvalue" correctly.<br><br><strong>Close:</strong> Akili Code + ORFE = a Kenyan building algorithmic tools for African educational access. Make the Princeton case distinct from Dartmouth by emphasizing ORFE independent work, operations research, and quantitative finance rather than liberal-arts flexibility.'],
           ['What to avoid','Do not open with "Princeton is world-renowned." Do not praise the research culture without specifics. Do not list clubs. Do not say you want to "change the world" — show how ORFE methods get you there.'],
         ]));
         const nb=el('div','ep');
         nb.innerHTML=`<div class="ep-lbl" style="color:var(--princeton)">Note-bank template (fill over Phase 1)</div><strong>Intellectual hook:</strong> [one moment where a problem changed how you see maths] · <strong>ORFE courses I want:</strong> [ORF ??? — why specifically] · <strong>Professor connection:</strong> [Prof name + their work + why it matters to your goals] · <strong>Akili Code link:</strong> [how ORFE methods will shape what you build] · <strong>Princeton-specific:</strong> [one thing Princeton offers that is genuinely not available elsewhere for your goals]`;
         body.appendChild(nb);
-        body.appendChild(ri('Essay draft timeline','Phase 1 (Jun–Aug): note-banking only. Phase 2 (Sep–Oct): first draft Tue/Thu evenings. SCEA deadline is typically 1 November — have a polished draft by mid-October.'));
+        body.appendChild(ri('Essay draft timeline','Phase 1 (Jun–Aug): note-banking only. Phase 2 (Sep–Oct): light Princeton notes after Dartmouth ED work. Phase 3 (Nov–Dec): full RD polish if Dartmouth ED is not an admit. If you ever switch away from Dartmouth ED and choose Princeton SCEA instead, verify restrictions before changing the plan.'));
       }));
     
       const sl5=el('div','sec-lbl','Application timeline');root.appendChild(sl5);
     
-      root.appendChild(accordion('🗓️','Timeline','var(--princeton)','Princeton SCEA key dates','Nothing submitted late','p-timeline',body=>{
+      root.appendChild(accordion('🗓️','Timeline','var(--princeton)','Princeton application timing','Keep the secondary option accurate','p-timeline',body=>{
         body.appendChild(dg([
-          ['SCEA deadline','Typically 1 November. Check Princeton admissions for the 2026 cycle. Confirm by August 2026.'],
-          ['Decision notification','Mid-December. Result: Accepted / Deferred to RD / Rejected.'],
-          ['If deferred','Submit a LOCI (Letter of Continued Interest) in January with meaningful updates. Phase 3 schedule includes LOCI prep.'],
-          ['SCEA restriction','SCEA means you may not apply early to other private US universities. You may still apply to public universities (UC system) and international schools early. Dartmouth is RD only.'],
+          ['Regular Decision deadline','Typically January 1. Use RD if Dartmouth is the ED school. Confirm Princeton dates on the official admissions site by August 2026.'],
+          ['SCEA alternative','Princeton SCEA is non-binding but restrictive. It conflicts with Dartmouth ED as a first-choice plan. Do not run both.'],
+          ['If Dartmouth ED admits','Withdraw any pending Princeton application as required by Dartmouth ED.'],
+          ['If Dartmouth ED defers or denies','Move Princeton ORFE into full RD polish in Phase 3, with a complete essay set by mid-December.'],
         ]));
         body.appendChild(ri('Princeton admissions site','admission.princeton.edu — read every page in the "Apply" section before writing a single word of your essay.'));
       }));
@@ -477,32 +477,34 @@
     function renderDartmouth(root){
       const intro=el('div','school-intro');
       intro.style.cssText='background:var(--dartmouth-bg);border-color:var(--dartmouth-bd);';
-      intro.innerHTML=`<div class="si-tag" style="color:var(--dartmouth)">Regular Decision · Strong secondary target</div><div class="si-title" style="color:var(--dartmouth)">Dartmouth College<br>CS modified with Economics</div><div class="si-sub" style="color:var(--dartmouth)">Dartmouth's modified CS+Economics degree combines technical computing with economic theory — giving you the quantitative tools and market thinking to build Akili Code into a real business. The "modified with" structure means real depth in both fields, not just a CS degree with an econ minor. Submit Regular Decision (since Princeton is your SCEA).</div>`;
+      intro.innerHTML=`<div class="si-tag" style="color:var(--dartmouth)">Early Decision · Dream school · Binding first choice</div><div class="si-title" style="color:var(--dartmouth)">Dartmouth College<br>CS modified with Economics</div><div class="si-sub" style="color:var(--dartmouth)">Dartmouth is the lead story: small-college teaching, flexible D-Plan rhythm, and a modified CS+Economics degree that lets you build technical systems while understanding the markets they enter. That is exactly the Akili Code question — how to build useful educational technology for African contexts with both engineering rigor and economic judgment.</div>`;
       root.appendChild(intro);
     
       const snote=el('div','s-note');
       snote.style.cssText='background:var(--dartmouth-bg);border-color:var(--dartmouth-bd);color:var(--dartmouth);';
-      snote.innerHTML='<strong>Research schedule:</strong> Dartmouth research moves to Tue/Thu evenings in Phase 3 (Nov–Dec 2026) after Princeton SCEA is submitted. Saturday 1h sessions alternate Princeton/Dartmouth during Phase 2.';
+      snote.innerHTML='<strong>Research schedule:</strong> Dartmouth owns the application block through October. Mon/Wed/Fri: faculty, courses, D-Plan, DCSI, and student culture. Tue/Thu: essays. Saturdays: one deep source or one full essay revision.';
       root.appendChild(snote);
     
       const sl1=el('div','sec-lbl','Why Dartmouth CS + Economics');root.appendChild(sl1);
     
       root.appendChild(accordion('🌲','Strategic fit','var(--dartmouth)','Why CS modified with Econ at Dartmouth','A technically serious degree that never loses sight of real markets','d-fit',body=>{
         body.appendChild(dg([
-          ['CS side','Algorithms, data structures, systems — the engineering foundation. COSC 1 and COSC 10 are the gateway courses. Track up to theory or applied ML.'],
-          ['Economics side','Micro, macro, econometrics — the analytical framework for understanding markets. ECON 1 and ECON 21 are the gateway. Integrates naturally with CS work.'],
-          ['Modified degree structure','Dartmouth\'s "modified majors" let you design a cohesive curriculum with a faculty adviser across two departments. More rigorous than a double major at many schools.'],
-          ['Akili Code narrative','Building a CS education platform for African markets requires understanding both the technical product and the economic context. Dartmouth makes this explicit and credible.'],
+          ['CS side','Algorithms, data structures, systems, HCI, and applied ML — the engineering foundation for turning Akili Code from content into a durable education product.'],
+          ['Economics side','Microeconomics, econometrics, markets, and development-facing economic reasoning — the analytical framework for pricing, adoption, incentives, and access.'],
+          ['Modified degree structure','Dartmouth\'s "modified majors" let you build one cohesive curriculum across two departments with faculty guidance. That is stronger than treating economics as a casual minor.'],
+          ['Akili Code narrative','Building a CS education platform for African markets requires understanding both the technical product and the economic context. Dartmouth makes that blend explicit, personal, and academically legitimate.'],
         ]));
+        body.appendChild(ri('Core application sentence','Dartmouth is the place where Immanuel can turn a self-taught builder profile into a deliberate CS+Economics education: rigorous enough for systems work, flexible enough for Kenya leave-term projects, and intimate enough for faculty mentorship.'));
       }));
     
       const sl2=el('div','sec-lbl','Faculty to research');root.appendChild(sl2);
     
       root.appendChild(accordion('🔬','Faculty research','var(--dartmouth)','Key Dartmouth CS and Econ professors','Specific names signal genuine engagement in your essay','d-profs',body=>{
         [
-          ['Prasad Jayanti (CS)','Algorithms, distributed computing, theory of computation','Foundational algorithms researcher. His work on concurrent algorithms is relevant if you frame Akili Code around distributed educational systems architecture.'],
-          ['Eric Zitzewitz (Economics)','Behavioural economics, financial economics, prediction markets','His research on information markets and economic behaviour connects to how you might think about pricing and adoption in African edtech markets.'],
-          ['Gevorg Grigoryan (CS)','Computational biology, ML applied to protein structure','Shows Dartmouth CS department\'s breadth into applied ML. Citing his interdisciplinary work demonstrates you understand CS at Dartmouth is not narrowly defined.'],
+          ['Prasad Jayanti (CS)','Algorithms, distributed computing, theory of computation','A strong fit for a builder who already thinks in graphs and distributed access. Use him for the algorithms/systems side of the Akili Code story.'],
+          ['David Kotz (CS)','Systems, mobile computing, security, health technology','Useful if you frame the USSD/router work as mobile infrastructure under constraint: low-bandwidth, real users, and systems that must work outside ideal lab conditions.'],
+          ['Thomas Cormen (CS)','Algorithms education and the CLRS tradition','Relevant because your gap year is partly about becoming fluent in algorithms and then teaching them. This connects Dartmouth CS to Akili Code as a teaching project.'],
+          ['Eric Zitzewitz (Economics)','Behavioural economics, financial economics, prediction markets','His research connects to pricing, adoption, and information problems in African edtech markets. This gives the economics half real substance.'],
         ].forEach(([n,a,w])=>{
           const c=el('div','pc');
           c.innerHTML=`<div class="pn">${n}</div><div class="pa">${a}</div><div class="pw">${w}</div>`;
@@ -515,22 +517,25 @@
     
       root.appendChild(accordion('📚','Courses','var(--dartmouth)','Key Dartmouth courses for CS+Econ narrative','Showing curriculum knowledge in the essay signals commitment','d-courses',body=>{
         body.appendChild(dg([
-          ['COSC 10','Problem Solving via Object-Oriented Programming — the first real CS course. Reference this to show you understand the Dartmouth CS entry point.'],
-          ['COSC 30','Discrete Mathematics in CS — exactly what you study in Block 1. Name this connection explicitly.'],
-          ['ECON 21','The Price System — microeconomics core. Analytical foundation for understanding market dynamics in edtech.'],
-          ['ECON 26','Economics and Financial Markets — bridges your CS+Econ degree with financial modelling relevant to Akili Code.'],
+          ['COSC 10','Problem Solving via Object-Oriented Programming — the first serious software step and a bridge from self-taught Python into Dartmouth CS discipline.'],
+          ['COSC 30','Discrete Mathematics in CS — exactly what Block 1 builds toward: proofs, graphs, counting, and the math under algorithms.'],
+          ['COSC 50','Software Design and Implementation — the natural place to mature Akili Code and the routing-engine project into maintainable software.'],
+          ['ECON 21','The Price System — microeconomics core for understanding incentives, pricing, and adoption in edtech markets.'],
+          ['ECON 26','Economics and Financial Markets — bridges CS+Econ with financial modelling and market thinking.'],
+          ['D-Plan + DCSI','Use a leave term to return to Kenya, extend the routing or education platform, and seek Dartmouth Center for Social Impact funding for a real social-sector deliverable.'],
         ]));
       }));
     
       const sl4=el('div','sec-lbl','Essay strategy');root.appendChild(sl4);
     
-      root.appendChild(accordion('✍️','Essay strategy','var(--dartmouth)','Dartmouth "Why Dartmouth?" essay','Submitted Regular Decision — you have more time to polish','d-essay',body=>{
+      root.appendChild(accordion('✍️','Essay strategy','var(--dartmouth)','Dartmouth ED essay strategy','The first application and the emotional center of the plan','d-essay',body=>{
         const ep=el('div','ep');
-        ep.innerHTML=`<div class="ep-lbl" style="color:var(--dartmouth)">Key difference from Princeton essay</div>Your Princeton essay leads with ORFE as a uniquely powerful academic framework. Your Dartmouth essay leads with the <em>modified major structure</em> as a uniquely flexible tool that lets you build a coherent CS+Econ education that most universities' rigid department structures would not allow.`;
+        ep.innerHTML=`<div class="ep-lbl" style="color:var(--dartmouth)">Core thesis</div>Your Dartmouth essay leads with the <em>modified major structure</em>, the D-Plan, and close undergraduate teaching as the unusual combination that fits Immanuel: a self-taught Kenyan builder who wants CS rigor, economic judgment, and the freedom to keep building Akili Code in real contexts.`;
         body.appendChild(ep);
         body.appendChild(dg([
-          ['What to emphasise','The modified major structure — show you understand it is not just a double major but a designed curriculum. Faculty in both departments. The D-Plan (quarter system) as an asset for projects and internships. The close faculty-student relationship in a small liberal arts college context.'],
-          ['Timing','Phase 3 (Nov–Dec): first draft after Princeton SCEA submitted. Tue/Thu evenings, 1.5h blocks. Regular Decision deadline is typically Jan 1 — polished draft by December 15.'],
+          ['What to emphasise','The modified major structure; named CS and Economics faculty; COSC 30/COSC 50 and ECON 21; the D-Plan as a project engine; DCSI as the funding path for a Kenya leave-term social-impact project; small seminars and faculty access.'],
+          ['ED timing','Dartmouth ED is due November 1 and is binding if admitted, with decisions by mid-December. Have a full polished application by October 15 so the final two weeks are proofing, recommender checks, and financial-aid document review.'],
+          ['Policy accuracy','Dartmouth ED allows other early applications only if they are non-restricted and non-binding. It prohibits other binding early applications. If admitted ED, withdraw pending applications and do not start new ones unless released for financial reasons.'],
         ]));
       }));
     }
@@ -585,17 +590,17 @@
     
       const hero=el('div','hero-grid');
       hero.innerHTML=`
-        <div class="hero-p">
-          <div class="htag p">Single-Choice Early Action · Primary target</div>
-          <div class="htitle p">Princeton University — ORFE</div>
-          <div class="hsub">Operations Research & Financial Engineering. Applied mathematics, probability, optimisation, financial modelling. The most direct path from your analytical strengths to building rigorous, scalable systems.</div>
-          <span class="hbadge p">SCEA · November 2026</span>
-        </div>
         <div class="hero-d">
-          <div class="htag d">Regular Decision · Strong secondary</div>
-          <div class="htitle d">Dartmouth — CS + Economics</div>
-          <div class="hsub">Modified major — deep in both computing and economic theory. Submit RD January 2027.</div>
-          <span class="hbadge d">RD · January 2027</span>
+          <div class="htag d">Early Decision · Dream school · Binding</div>
+          <div class="htitle d">Dartmouth — CS modified with Economics</div>
+          <div class="hsub">A liberal-arts-plus-quant-rigor path: CS depth, economics judgment, D-Plan flexibility, DCSI-backed leave-term possibilities, and a clear bridge from Akili Code to a serious undergraduate academic plan.</div>
+          <span class="hbadge d">ED · November 1, 2026</span>
+        </div>
+        <div class="hero-p">
+          <div class="htag p">Secondary option · ORFE</div>
+          <div class="htitle p">Princeton University — ORFE</div>
+          <div class="hsub">A credible quant systems second choice: operations research, probability, optimization, financial engineering, and independent work tied to the routing-engine project.</div>
+          <span class="hbadge p">RD · January 2027</span>
         </div>
       `;
       app.appendChild(hero);
