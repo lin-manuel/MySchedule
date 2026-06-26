@@ -1,0 +1,696 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<h2 class="sr-only">Gap year master schedule — Immanuel, June 2026 to April 2027. Four phases: Foundation, Application, Build, Business. 2163 total study hours.</h2>
+<style>
+:root{
+  --mth-bg:#E1F5EE;--mth-bd:#5DCAA5;--mth-tx:#085041;--mth-ac:#1D9E75;
+  --cs-bg:#FAEEDA;--cs-bd:#EF9F27;--cs-tx:#633806;--cs-ac:#BA7517;
+  --app-bg:#FAECE7;--app-bd:#D85A30;--app-tx:#712B13;--app-ac:#993C1D;
+  --biz-bg:#EEEDFE;--biz-bd:#7F77DD;--biz-tx:#3C3489;--biz-ac:#534AB7;
+  --drt-bg:#EAF3DE;--drt-bd:#639922;--drt-tx:#27500A;--drt-ac:#3B6D11;
+  --gtr-bg:#FBEAF0;--gtr-tx:#4B1528;
+}
+@media(prefers-color-scheme:dark){:root{
+  --mth-bg:#04342C;--mth-bd:#1D9E75;--mth-tx:#9FE1CB;--mth-ac:#5DCAA5;
+  --cs-bg:#412402;--cs-bd:#BA7517;--cs-tx:#FAC775;--cs-ac:#EF9F27;
+  --app-bg:#4A1B0C;--app-bd:#993C1D;--app-tx:#F5C4B3;--app-ac:#D85A30;
+  --biz-bg:#26215C;--biz-bd:#534AB7;--biz-tx:#CECBF6;--biz-ac:#7F77DD;
+  --drt-bg:#173404;--drt-bd:#3B6D11;--drt-tx:#C0DD97;--drt-ac:#639922;
+  --gtr-bg:#4B1528;--gtr-tx:#FBEAF0;
+}}
+[data-mode="dark"]{
+  --mth-bg:#04342C;--mth-bd:#1D9E75;--mth-tx:#9FE1CB;--mth-ac:#5DCAA5;
+  --cs-bg:#412402;--cs-bd:#BA7517;--cs-tx:#FAC775;--cs-ac:#EF9F27;
+  --app-bg:#4A1B0C;--app-bd:#993C1D;--app-tx:#F5C4B3;--app-ac:#D85A30;
+  --biz-bg:#26215C;--biz-bd:#534AB7;--biz-tx:#CECBF6;--biz-ac:#7F77DD;
+  --drt-bg:#173404;--drt-bd:#3B6D11;--drt-tx:#C0DD97;--drt-ac:#639922;
+  --gtr-bg:#4B1528;--gtr-tx:#FBEAF0;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body,div,span,p{font-family:'Space Grotesk',var(--font-sans),sans-serif;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:50;background:var(--surface-2);border-bottom:0.5px solid var(--border-strong);padding:12px 14px 0;}
+.hdr-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:10px;}
+.htitle{font-size:14px;font-weight:700;color:var(--text-primary);letter-spacing:-0.3px;}
+.hsub{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-muted);margin-top:2px;letter-spacing:.04em;}
+.ed1b{flex-shrink:0;background:var(--drt-bg);border:0.5px solid var(--drt-bd);border-radius:var(--radius);padding:5px 10px;text-align:right;}
+.ed1l{font-family:'Space Mono',monospace;font-size:8px;color:var(--drt-ac);letter-spacing:.1em;text-transform:uppercase;}
+.ed1n{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;color:var(--drt-tx);line-height:1.1;}
+.ed1u{font-size:8px;color:var(--drt-ac);}
+/* TABS */
+.tabs{display:flex;gap:1px;overflow-x:auto;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;border:none;border-bottom:2px solid transparent;background:transparent;cursor:pointer;padding:5px 9px 7px;font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:var(--text-muted);white-space:nowrap;display:flex;flex-direction:column;align-items:center;gap:1px;transition:color .1s,border-color .1s;letter-spacing:.02em;}
+.tab span{font-size:8px;font-weight:400;opacity:.8;}
+.tab:hover{color:var(--text-secondary);}
+.tab[data-p="1"].act{color:var(--mth-ac);border-bottom-color:var(--mth-ac);}
+.tab[data-p="2"].act{color:var(--app-ac);border-bottom-color:var(--app-ac);}
+.tab[data-p="3"].act{color:var(--cs-ac);border-bottom-color:var(--cs-ac);}
+.tab[data-p="4"].act{color:var(--biz-ac);border-bottom-color:var(--biz-ac);}
+.tab[data-p="map"].act{color:var(--text-primary);border-bottom-color:var(--border-stronger);}
+/* PANELS */
+.panel{padding:14px 14px 36px;}
+.panel.off{display:none;}
+/* PHASE HEADER */
+.phd{display:flex;gap:8px;align-items:flex-start;margin-bottom:12px;}
+.pbadge{padding:3px 7px;border-radius:3px;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:.05em;flex-shrink:0;margin-top:3px;}
+.pbadge.m{background:var(--mth-bg);color:var(--mth-tx);border:0.5px solid var(--mth-bd);}
+.pbadge.a{background:var(--app-bg);color:var(--app-tx);border:0.5px solid var(--app-bd);}
+.pbadge.c{background:var(--cs-bg);color:var(--cs-tx);border:0.5px solid var(--cs-bd);}
+.pbadge.b{background:var(--biz-bg);color:var(--biz-tx);border:0.5px solid var(--biz-bd);}
+.pname{font-size:19px;font-weight:700;color:var(--text-primary);letter-spacing:-.3px;line-height:1.15;}
+.pdates{font-family:'Space Mono',monospace;font-size:9px;color:var(--text-muted);margin-top:2px;}
+.pfocus{font-size:11px;color:var(--text-secondary);margin-top:3px;}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:12px;}
+@media(max-width:580px){.stats{grid-template-columns:repeat(3,1fr);}}
+.stat{background:var(--surface-1);border-radius:var(--radius);padding:8px 8px;}
+.sl{font-family:'Space Mono',monospace;font-size:8px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;}
+.sv{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;line-height:1.1;margin-top:1px;}
+.su{font-size:8px;color:var(--text-muted);}
+/* COLS */
+.cols{display:grid;grid-template-columns:220px minmax(0,1fr);gap:8px;margin-bottom:10px;}
+@media(max-width:580px){.cols{grid-template-columns:1fr;}}
+/* SCHED CARD */
+.sched{background:var(--surface-1);border-radius:12px;border:0.5px solid var(--border);padding:10px;height:fit-content;}
+.ctitle{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.tb{display:flex;gap:5px;margin-bottom:2px;align-items:stretch;}
+.tt{font-family:'Space Mono',monospace;font-size:8px;color:var(--text-muted);width:32px;text-align:right;flex-shrink:0;padding-top:4px;}
+.tbar{flex:1;border-radius:4px;border:0.5px solid var(--border);padding:4px 7px;}
+.tbar.M{background:var(--mth-bg);border-color:var(--mth-bd);}
+.tbar.C{background:var(--cs-bg);border-color:var(--cs-bd);}
+.tbar.A{background:var(--app-bg);border-color:var(--app-bd);}
+.tbar.B{background:var(--biz-bg);border-color:var(--biz-bd);}
+.tbar.G{background:var(--gtr-bg);border-color:var(--border);}
+.tbar.K{background:transparent;border-color:var(--border);}
+.tn{font-size:10px;font-weight:500;}
+.tbar.M .tn{color:var(--mth-tx);} .tbar.C .tn{color:var(--cs-tx);} .tbar.A .tn{color:var(--app-tx);} .tbar.B .tn{color:var(--biz-tx);} .tbar.G .tn{color:var(--gtr-tx);} .tbar.K .tn{color:var(--text-muted);}
+.td{font-family:'Space Mono',monospace;font-size:8px;opacity:.6;}
+.ts{font-size:9px;color:var(--text-secondary);line-height:1.3;margin-top:1px;}
+.tbar.M .ts{color:var(--mth-tx);opacity:.75;} .tbar.C .ts{color:var(--cs-tx);opacity:.75;} .tbar.A .ts{color:var(--app-tx);opacity:.75;} .tbar.B .ts{color:var(--biz-tx);opacity:.75;}
+.trow{display:flex;justify-content:space-between;align-items:baseline;}
+.h3{min-height:70px;} .h2{min-height:48px;} .h1{min-height:24px;} .hh{min-height:16px;} .hq{min-height:10px;}
+.wnote{margin-top:7px;padding:7px 8px;background:var(--surface-0,var(--surface-1));border:0.5px solid var(--border);border-radius:var(--radius);font-size:9px;color:var(--text-secondary);line-height:1.5;}
+.wnote b{color:var(--text-primary);font-weight:500;}
+/* SUBJECT CARDS */
+.sc-wrap{display:flex;flex-direction:column;gap:7px;}
+.sc{background:var(--surface-1);border-radius:12px;border:0.5px solid var(--border);overflow:hidden;}
+.sc-hd{display:flex;align-items:center;gap:7px;padding:9px 11px;cursor:pointer;user-select:none;}
+.sc-hd:hover{background:rgba(0,0,0,.03);}
+[data-mode="dark"] .sc-hd:hover{background:rgba(255,255,255,.04);}
+.sico{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.sico.M{background:var(--mth-bg);} .sico.C{background:var(--cs-bg);} .sico.A{background:var(--app-bg);} .sico.B{background:var(--biz-bg);} .sico.D{background:var(--drt-bg);}
+.sinf{flex:1;min-width:0;}
+.sn{font-size:12px;font-weight:500;color:var(--text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sd{font-size:9px;color:var(--text-muted);margin-top:1px;}
+.spill{flex-shrink:0;font-family:'Space Mono',monospace;font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;}
+.spill.M{background:var(--mth-bg);color:var(--mth-tx);} .spill.C{background:var(--cs-bg);color:var(--cs-tx);} .spill.A{background:var(--app-bg);color:var(--app-tx);} .spill.B{background:var(--biz-bg);color:var(--biz-tx);} .spill.D{background:var(--drt-bg);color:var(--drt-tx);}
+.schev{font-size:9px;color:var(--text-muted);transition:transform .15s;margin-left:3px;flex-shrink:0;}
+.sc.open .schev{transform:rotate(180deg);}
+.sc-body{display:none;padding:2px 11px 11px;}
+.sc.open .sc-body{display:block;}
+.sechd{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);padding:7px 0 4px;border-top:0.5px solid var(--border);margin-top:2px;}
+.sechd:first-child{border-top:none;margin-top:0;padding-top:0;}
+.ti{display:flex;gap:5px;padding:2px 0;}
+.dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.dot.M{background:var(--mth-ac);} .dot.C{background:var(--cs-ac);} .dot.A{background:var(--app-ac);} .dot.B{background:var(--biz-ac);} .dot.D{background:var(--drt-ac);}
+.titx{font-size:11px;color:var(--text-secondary);line-height:1.4;}
+/* MILESTONES */
+.msc{background:var(--surface-1);border-radius:12px;border:0.5px solid var(--border);padding:10px;}
+.msr{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:0.5px solid var(--border);}
+.msr:last-child{border-bottom:none;padding-bottom:0;} .msr:first-child{padding-top:0;}
+.msdt{font-family:'Space Mono',monospace;font-size:8px;color:var(--text-muted);width:54px;flex-shrink:0;}
+.msdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.msn{font-size:11px;font-weight:400;color:var(--text-primary);flex:1;}
+.msno{font-size:9px;color:var(--text-muted);flex-shrink:0;}
+/* FULL MAP */
+.mleg{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;}
+.leg{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text-secondary);}
+.ldot{width:7px;height:7px;border-radius:2px;flex-shrink:0;}
+.mod{background:var(--surface-1);border-radius:12px;border:0.5px solid var(--border);margin-bottom:7px;overflow:hidden;}
+.modhd{display:flex;align-items:center;gap:7px;padding:10px 13px;cursor:pointer;user-select:none;border-bottom:0.5px solid var(--border);}
+.modhd:hover{background:rgba(0,0,0,.03);}
+[data-mode="dark"] .modhd:hover{background:rgba(255,255,255,.04);}
+.modico{font-size:14px;}
+.modinf{flex:1;}
+.modn{font-size:12px;font-weight:500;color:var(--text-primary);}
+.mods{font-size:9px;color:var(--text-muted);margin-top:1px;}
+.modchev{font-size:9px;color:var(--text-muted);transition:transform .15s;}
+.mod.open .modchev{transform:rotate(180deg);}
+.modb{display:none;padding:10px 13px;}
+.mod.open .modb{display:block;}
+.grp{margin-bottom:10px;}
+.grp:last-child{margin-bottom:0;}
+.grpt{font-family:'Space Mono',monospace;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);padding-bottom:4px;border-bottom:0.5px solid var(--border);margin-bottom:3px;}
+.mrow{display:flex;align-items:flex-start;gap:7px;padding:3px 0;border-bottom:0.5px solid var(--border);}
+.mrow:last-child{border-bottom:none;}
+.mtop{font-size:10.5px;color:var(--text-secondary);flex:1;line-height:1.4;}
+.ptag{flex-shrink:0;font-family:'Space Mono',monospace;font-size:7px;font-weight:700;padding:2px 5px;border-radius:2px;white-space:nowrap;}
+.ptag.p1{background:var(--mth-bg);color:var(--mth-tx);}
+.ptag.p2{background:var(--app-bg);color:var(--app-tx);}
+.ptag.p3{background:var(--cs-bg);color:var(--cs-tx);}
+.ptag.p4{background:var(--biz-bg);color:var(--biz-tx);}
+.ptag.ft{background:var(--surface-0,var(--surface-2));color:var(--text-muted);border:0.5px solid var(--border);}
+.mapsub{font-size:11px;color:var(--text-secondary);margin-bottom:10px;}
+</style>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-row">
+    <div><div class="htitle">Gap Year Master Schedule</div><div class="hsub">Immanuel · Jun 2026 → Apr 2027 · 309 days · 2,163 study hours</div></div>
+    <div class="ed1b"><div class="ed1l">Dartmouth ED1</div><div class="ed1n" id="cntd">—</div><div class="ed1u">days remaining</div></div>
+  </div>
+  <div class="tabs">
+    <button class="tab act" data-p="1">① Foundation<span>Jun–Sep</span></button>
+    <button class="tab" data-p="2">② Application<span>Oct–Nov 1</span></button>
+    <button class="tab" data-p="3">③ Build<span>Nov–Dec</span></button>
+    <button class="tab" data-p="4">④ Business<span>Jan–Apr</span></button>
+    <button class="tab" data-p="map">Full map</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PHASE 1 -->
+<div class="panel" id="p-1">
+  <div class="phd"><div class="pbadge m">PHASE 1</div><div><div class="pname">Foundation</div><div class="pdates">Jun 25 – Sep 30, 2026 · 97 days</div><div class="pfocus">SAT prep · Python/OOP/linear data structures · Single-variable calculus</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sl">Duration</div><div class="sv" style="color:var(--mth-ac)">97</div><div class="su">days</div></div>
+    <div class="stat"><div class="sl">Total study</div><div class="sv">~679h</div><div class="su">7h/day</div></div>
+    <div class="stat"><div class="sl">Math (B1)</div><div class="sv" style="color:var(--mth-ac)">291h</div><div class="su">3h/day</div></div>
+    <div class="stat"><div class="sl">CS (B2)</div><div class="sv" style="color:var(--cs-ac)">194h</div><div class="su">2h/day</div></div>
+    <div class="stat"><div class="sl">SAT (B3)</div><div class="sv" style="color:var(--app-ac)">194h</div><div class="su">2h/day</div></div>
+  </div>
+  <div class="cols">
+    <div class="sched">
+      <div class="ctitle">Daily schedule · Mon–Sat</div>
+      <div class="tb"><div class="tt">08:00</div><div class="tbar M h3"><div class="trow"><span class="tn">Mathematics</span><span class="td">3h</span></div><div class="ts">Single-variable calculus<br>Limits → Integration → Series</div></div></div>
+      <div class="tb"><div class="tt">11:00</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">11:15</div><div class="tbar C h2"><div class="trow"><span class="tn">CS</span><span class="td">2h</span></div><div class="ts">Python → OOP → Linked lists, stacks, queues<br>LeetCode: Arrays & hashing (30 problems)</div></div></div>
+      <div class="tb"><div class="tt">13:15</div><div class="tbar K h1"><div class="trow"><span class="tn">Lunch + rest</span><span class="td">1h</span></div></div></div>
+      <div class="tb"><div class="tt">14:15</div><div class="tbar A h2"><div class="trow"><span class="tn">SAT prep</span><span class="td">2h</span></div><div class="ts">Math + Reading/Writing drills<br>Weekly full mock test (Saturdays)</div></div></div>
+      <div class="tb"><div class="tt">16:15</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">16:30</div><div class="tbar G hh"><div class="trow"><span class="tn">Guitar</span><span class="td">30m</span></div><div class="ts" style="color:var(--gtr-tx);opacity:.75">Chords, technique, music theory</div></div></div>
+      <div class="wnote"><b>Math block:</b> 90min new concept → 90min worked examples + Anki.<br><b>Sunday:</b> Guitar 2h only, full rest. <b>Fri:</b> Video editing 1–1.5h.</div>
+    </div>
+    <div class="sc-wrap">
+      <div class="sc open">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico M">∫</div><div class="sinf"><div class="sn">Mathematics — Single-variable calculus</div><div class="sd">MATH 3 + MATH 8 equivalent · Placement exam prep</div></div><div class="spill M">3h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Limits & continuity</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Graphical & algebraic evaluation of limits; one-sided limits; limits at infinity</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Continuity definitions & Intermediate Value Theorem (IVT)</div></div>
+          <div class="sechd">Differentiation</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Limit definition of the derivative</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Power, Product, Quotient & Chain rules; implicit differentiation & related rates</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Mean Value Theorem (MVT) & Extreme Value Theorem (EVT)</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Optimization, curve sketching, L'Hôpital's Rule</div></div>
+          <div class="sechd">Integration</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Riemann sums; Fundamental Theorem of Calculus (Parts 1 & 2)</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">u-substitution, integration by parts, partial fractions, trig substitution</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Areas between curves & volumes of revolution (disk & washer methods)</div></div>
+          <div class="sechd">Sequences & series</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Integral, Ratio, Root, Comparison, Alternating Series convergence tests</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Power series: radius & interval of convergence; Taylor & Maclaurin series</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico C">⌨</div><div class="sinf"><div class="sn">CS — Python → OOP → linear data structures</div><div class="sd">COSC 1 + COSC 10 foundation · Interview readiness begins</div></div><div class="spill C">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Procedural programming</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Variables, data types, scope; control flow (if/else, while, for); 1D & 2D arrays</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Functions: parameter passing (by value/reference), call stack mechanics</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">File I/O & exception handling</div></div>
+          <div class="sechd">Object-oriented programming</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Classes, objects, constructors (default, parameterized, copy), destructors</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Encapsulation: access modifiers, getters & setters</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Inheritance: base/derived classes, method overriding, super keyword</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Polymorphism: compile-time (overloading) vs. runtime (overriding)</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Abstraction: abstract classes & interfaces; heap vs. stack memory</div></div>
+          <div class="sechd">Complexity analysis & linear data structures</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Asymptotic notation: Big O, Big Omega, Big Theta — iterative & recursive</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Singly & doubly linked lists, circular linked lists — node pointer manipulation</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Stacks: array-based & linked-list implementations (LIFO)</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Queues: standard, circular, priority queues (FIFO)</div></div>
+          <div class="sechd">LeetCode: arrays & hashing — 30 problems</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Fixed/dynamic arrays, hash maps, hash sets, time complexity analysis</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico A">📝</div><div class="sinf"><div class="sn">Block 3 — SAT preparation</div><div class="sd">Target 1500+ · September 2026 sitting</div></div><div class="spill A">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Math section</div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Algebra & linear functions; problem solving & data analysis</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Advanced math: quadratics, functions, polynomial systems</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Geometry & trigonometry</div></div>
+          <div class="sechd">Reading & writing section</div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Craft & structure: word choice, text structure, purpose</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Information & ideas: inference, central idea, textual evidence</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Standard English conventions: grammar, usage, punctuation</div></div>
+          <div class="sechd">Practice regime</div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Weekly full timed mock (3h15m, Saturdays) — scored & reviewed in full</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Daily 20-question targeted drill on the weakest section</div></div>
+          <div class="ti"><div class="dot A"></div><div class="titx">Error log: categorize every wrong answer, track pattern by type</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="msc">
+    <div class="ctitle">Phase 1 milestones</div>
+    <div class="msr"><div class="msdt">Jun 25</div><div class="msdot" style="background:var(--drt-ac)"></div><div class="msn">Gap year begins — day 1</div><div class="msno">Phase 1 start</div></div>
+    <div class="msr"><div class="msdt">Aug 2026</div><div class="msdot" style="background:var(--mth-ac)"></div><div class="msn">Full SAT practice test under timed conditions — score, calibrate, adjust</div><div class="msno">Assessment</div></div>
+    <div class="msr"><div class="msdt">Sep 2026</div><div class="msdot" style="background:var(--app-ac)"></div><div class="msn">SAT sitting — target 1500+</div><div class="msno">Primary goal</div></div>
+    <div class="msr"><div class="msdt">Sep 30</div><div class="msdot" style="background:var(--mth-ac)"></div><div class="msn">Single-variable calculus complete · 30 LeetCode (arrays & hashing) done</div><div class="msno">Phase 1 closes</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PHASE 2 -->
+<div class="panel off" id="p-2">
+  <div class="phd"><div class="pbadge a">PHASE 2</div><div><div class="pname">Application</div><div class="pdates">Oct 1 – Nov 1, 2026 · 32 days</div><div class="pfocus">Dartmouth ED1 essays · Linear algebra · Non-linear data structures</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sl">Duration</div><div class="sv" style="color:var(--app-ac)">32</div><div class="su">days</div></div>
+    <div class="stat"><div class="sl">Total study</div><div class="sv">~224h</div><div class="su">7h/day</div></div>
+    <div class="stat"><div class="sl">Math (B1)</div><div class="sv" style="color:var(--mth-ac)">96h</div><div class="su">3h/day</div></div>
+    <div class="stat"><div class="sl">CS (B2)</div><div class="sv" style="color:var(--cs-ac)">64h</div><div class="su">2h/day</div></div>
+    <div class="stat"><div class="sl">App (B3)</div><div class="sv" style="color:var(--app-ac)">64h</div><div class="su">2h/day</div></div>
+  </div>
+  <div class="cols">
+    <div class="sched">
+      <div class="ctitle">Daily schedule · Mon–Sat</div>
+      <div class="tb"><div class="tt">08:00</div><div class="tbar M h3"><div class="trow"><span class="tn">Mathematics</span><span class="td">3h</span></div><div class="ts">Linear algebra<br>Matrices → vector spaces → rank</div></div></div>
+      <div class="tb"><div class="tt">11:00</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">11:15</div><div class="tbar C h2"><div class="trow"><span class="tn">CS</span><span class="td">2h</span></div><div class="ts">Non-linear DS + sorting algorithms<br>Trees, heaps, hash tables, graphs</div></div></div>
+      <div class="tb"><div class="tt">13:15</div><div class="tbar K h1"><div class="trow"><span class="tn">Lunch + rest</span><span class="td">1h</span></div></div></div>
+      <div class="tb"><div class="tt">14:15</div><div class="tbar A h2"><div class="trow"><span class="tn">Dartmouth ED1</span><span class="td">2h</span></div><div class="ts">Essays · activities list · CSS Profile<br>Faculty research · rec coordination</div></div></div>
+      <div class="tb"><div class="tt">16:15</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">16:30</div><div class="tbar G hh"><div class="trow"><span class="tn">Guitar</span><span class="td">30m</span></div><div class="ts" style="color:var(--gtr-tx);opacity:.75">Chord transitions, first full songs</div></div></div>
+      <div class="wnote"><b>Priority:</b> Essay quality beats everything else in this phase.<br><b>Buffer:</b> Application fully assembled by Oct 28 — 3 days before Nov 1.</div>
+    </div>
+    <div class="sc-wrap">
+      <div class="sc open">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico M">▦</div><div class="sinf"><div class="sn">Mathematics — Linear algebra</div><div class="sd">MATH 22 equivalent · Matrices, vector spaces, rank</div></div><div class="spill M">3h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Systems of linear equations</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Matrix representation of linear systems</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Row reduction & echelon forms: Gaussian & Gauss-Jordan elimination</div></div>
+          <div class="sechd">Matrix operations</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Matrix multiplication, transposes & inverses</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Determinants: calculation methods & geometric properties</div></div>
+          <div class="sechd">Vector spaces</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Vector spaces, subspaces, Null Space (Nul A) & Column Space (Col A)</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Linear independence, basis, dimension & rank</div></div>
+          <div class="sechd">Deferred to Phase 4+</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Eigenvalues, eigenvectors & matrix diagonalization</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Inner products, Gram-Schmidt process, least-squares problems</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico C">🌲</div><div class="sinf"><div class="sn">CS — Non-linear DS + algorithms intro</div><div class="sd">COSC 10 completion + COSC 31 intro</div></div><div class="spill C">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Non-linear data structures</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Binary trees & BSTs: insertion, deletion, search properties</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Balanced trees: AVL & Red-Black tree concepts</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Heaps: Min-heaps, Max-heaps, binary heap array representation</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Hash tables: hash functions, chaining, open addressing</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Graphs: adjacency matrices & adjacency lists</div></div>
+          <div class="sechd">Sorting & searching algorithms</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Bubble, Insertion, Selection, Merge, Quick, Heap Sort</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Tree traversals: In/Pre/Post-order, Level-order (BFS)</div></div>
+          <div class="sechd">LeetCode: two pointers & sliding window — 30 problems</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Left/right boundary pointers, window expansion/contraction, string metrics</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico D">🎯</div><div class="sinf"><div class="sn">Block 3 — Dartmouth ED1 application</div><div class="sd">Nov 1 deadline · Essays are the primary deliverable</div></div><div class="spill D">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Essay writing — priority order</div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Common App main essay (650 words) — should be finalized entering Phase 2</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Dartmouth Prompt 1: What should your first-year roommate know about you?</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Dartmouth Prompt 2: Community values — how you contribute to a peer group</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Dartmouth Prompt 3: Additional info — CS Modified + Econ, Kenya context, gap year</div></div>
+          <div class="sechd">Application materials</div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Activities list (10 slots): Class Prefect, Lab Prefect, German Club, NaviSafi, MyOS, Bird AI, Akili Code</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">CSS Profile: financial aid documentation — need-blind + 100% need-met</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Letters of recommendation: 2 teacher recs + counselor coordination</div></div>
+          <div class="sechd">Dartmouth-specific research</div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Faculty: David Kotz (wireless & network security, CS dept)</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">Faculty: Deeparnab Chakrabarty & Amit Chakrabarti (algorithms & graph theory)</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">D-Plan leave term to Nairobi: DCSI funding (not Rockefeller — US-only)</div></div>
+          <div class="ti"><div class="dot D"></div><div class="titx">CS Modified + Economics joint program structure</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="msc">
+    <div class="ctitle">Phase 2 milestones</div>
+    <div class="msr"><div class="msdt">Oct 1</div><div class="msdot" style="background:var(--app-ac)"></div><div class="msn">Phase 2 begins — 32-day application sprint</div><div class="msno">SAT done</div></div>
+    <div class="msr"><div class="msdt">Oct 15</div><div class="msdot" style="background:var(--cs-ac)"></div><div class="msn">All 3 Dartmouth supplement essays drafted (first full draft)</div><div class="msno">2 weeks to revise</div></div>
+    <div class="msr"><div class="msdt">Oct 22</div><div class="msdot" style="background:var(--cs-ac)"></div><div class="msn">Final essay revision + external feedback incorporated</div><div class="msno">Polish pass</div></div>
+    <div class="msr"><div class="msdt">Oct 28</div><div class="msdot" style="background:var(--drt-ac)"></div><div class="msn">Application fully assembled — ready to submit</div><div class="msno">3-day buffer</div></div>
+    <div class="msr"><div class="msdt">Nov 1</div><div class="msdot" style="background:var(--app-ac)"></div><div class="msn">DARTMOUTH ED1 DEADLINE — SUBMIT</div><div class="msno">The primary target</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PHASE 3 -->
+<div class="panel off" id="p-3">
+  <div class="phd"><div class="pbadge c">PHASE 3</div><div><div class="pname">Build</div><div class="pdates">Nov 2 – Dec 31, 2026 · 60 days</div><div class="pfocus">NaviSafi USSD router · Probability & statistics · Graph algorithms · RD applications</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sl">Duration</div><div class="sv" style="color:var(--cs-ac)">60</div><div class="su">days</div></div>
+    <div class="stat"><div class="sl">Total study</div><div class="sv">~420h</div><div class="su">7h/day</div></div>
+    <div class="stat"><div class="sl">Math (B1)</div><div class="sv" style="color:var(--mth-ac)">180h</div><div class="su">3h/day</div></div>
+    <div class="stat"><div class="sl">CS (B2)</div><div class="sv" style="color:var(--cs-ac)">120h</div><div class="su">2h/day</div></div>
+    <div class="stat"><div class="sl">Build (B3)</div><div class="sv" style="color:var(--cs-ac)">120h</div><div class="su">NaviSafi + RD</div></div>
+  </div>
+  <div class="cols">
+    <div class="sched">
+      <div class="ctitle">Daily schedule · Mon–Sat</div>
+      <div class="tb"><div class="tt">08:00</div><div class="tbar M h3"><div class="trow"><span class="tn">Mathematics</span><span class="td">3h</span></div><div class="ts">Probability & statistics<br>Descriptive → distributions → inference</div></div></div>
+      <div class="tb"><div class="tt">11:00</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">11:15</div><div class="tbar C h2"><div class="trow"><span class="tn">CS + project</span><span class="td">2h</span></div><div class="ts">Graph algorithms + NaviSafi<br>BFS/DFS → Dijkstra's → USSD router</div></div></div>
+      <div class="tb"><div class="tt">13:15</div><div class="tbar K h1"><div class="trow"><span class="tn">Lunch + rest</span><span class="td">1h</span></div></div></div>
+      <div class="tb"><div class="tt">14:15</div><div class="tbar C h2"><div class="trow"><span class="tn">NaviSafi build + RD apps</span><span class="td">2h</span></div><div class="ts">OSMnx · FastAPI · Africa's Talking API<br>Princeton ORFE + MIT EA + Harvard/Yale</div></div></div>
+      <div class="tb"><div class="tt">16:15</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">16:30</div><div class="tbar G hh"><div class="trow"><span class="tn">Guitar</span><span class="td">30m</span></div><div class="ts" style="color:var(--gtr-tx);opacity:.75">Building repertoire, fingerpicking</div></div></div>
+      <div class="wnote"><b>Key shift:</b> Block 3 runs project build + RD essays in parallel.<br><b>Dec 15:</b> Dartmouth ED1 decisions. Business reading: light evening leisure only.</div>
+    </div>
+    <div class="sc-wrap">
+      <div class="sc open">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico M">σ</div><div class="sinf"><div class="sn">Mathematics — Probability & statistics</div><div class="sd">ECON 10 / quant foundation · Inference & distributions</div></div><div class="spill M">3h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Descriptive statistics</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Measures of central tendency: mean, median, mode</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Dispersion: variance, standard deviation, IQR, skewness, kurtosis</div></div>
+          <div class="sechd">Probability</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Probability rules, axioms & set notation</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Conditional probability & statistical independence</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Bayes' Theorem and its applications</div></div>
+          <div class="sechd">Distributions & statistical inference</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Binomial distribution: PMF, mean, variance</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Normal distribution: PDF, Z-scores, standard normal table</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">t-distribution & Central Limit Theorem (CLT)</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Confidence intervals for means & proportions</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Hypothesis testing: H₀ vs H₁, Type I/II errors, p-values, z-tests & t-tests</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico C">🗺</div><div class="sinf"><div class="sn">CS — Graph algorithms + NaviSafi project</div><div class="sd">COSC 31 core · Dijkstra's powers the real product</div></div><div class="spill C">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Graph traversals</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Breadth-First Search (BFS): queue-based, level-order exploration</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Depth-First Search (DFS): recursive & iterative approaches</div></div>
+          <div class="sechd">Greedy algorithms — directly powers NaviSafi</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Dijkstra's shortest path algorithm → the NaviSafi routing engine</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">A* search (heuristic extension) for OpenStreetMap graphs</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Prim's & Kruskal's Minimum Spanning Trees</div></div>
+          <div class="sechd">Dynamic programming</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Memoization (top-down): recursion + cache for overlapping subproblems</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Tabulation (bottom-up): iterative DP table filling</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Classic problems: knapsack, LCS, shortest paths in DAGs</div></div>
+          <div class="sechd">LeetCode: stacks, queues & linked lists — 30 problems</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Pointer updates, dummy nodes, LIFO/FIFO structures, monostacks</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico C">🛠</div><div class="sinf"><div class="sn">Block 3 — NaviSafi build + RD applications</div><div class="sd">USSD routing engine · Princeton/MIT/Harvard/Yale essays</div></div><div class="spill C">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">NaviSafi: USSD routing engine</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">OSMnx: load, query & clean OpenStreetMap graph data for Nairobi</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">NetworkX: run Dijkstra's & A* on real road network graphs</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Africa's Talking USSD API: stateful session management, input parsing</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">FastAPI backend: routing endpoints, stateful USSD session handling</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Offline-first design for low-connectivity environments</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">GitHub: full docs, README, architecture diagrams, demo</div></div>
+          <div class="sechd">RD applications (parallel)</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">MIT EA: NaviSafi as the technical centerpiece</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Princeton RD: ORFE angle — Kornhauser Smart Driving Lab connection</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Harvard + Yale RD: supplemental essays tailored per school</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="msc">
+    <div class="ctitle">Phase 3 milestones</div>
+    <div class="msr"><div class="msdt">Nov 2</div><div class="msdot" style="background:var(--cs-ac)"></div><div class="msn">Phase 3 begins — building phase</div><div class="msno">Post-submission</div></div>
+    <div class="msr"><div class="msdt">Nov 1</div><div class="msdot" style="background:var(--app-ac)"></div><div class="msn">MIT EA deadline (non-restrictive, compatible with Dartmouth ED1)</div><div class="msno">Submit MIT EA</div></div>
+    <div class="msr"><div class="msdt">Nov 15</div><div class="msdot" style="background:var(--mth-ac)"></div><div class="msn">NaviSafi MVP: Dijkstra's routing working on OSM road data</div><div class="msno">First working version</div></div>
+    <div class="msr"><div class="msdt">Dec 15</div><div class="msdot" style="background:var(--drt-ac)"></div><div class="msn">Dartmouth ED1 decisions released</div><div class="msno">Decision day</div></div>
+    <div class="msr"><div class="msdt">Jan 1</div><div class="msdot" style="background:var(--app-ac)"></div><div class="msn">Harvard, Yale, Princeton RD deadlines (Jan 1 cutoff)</div><div class="msno">RD submissions</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PHASE 4 -->
+<div class="panel off" id="p-4">
+  <div class="phd"><div class="pbadge b">PHASE 4</div><div><div class="pname">Business</div><div class="pdates">Jan 1 – Apr 30, 2027 · 120 days</div><div class="pfocus">Business & finance (Block 1 shifts) · Discrete math (Block 3) · CS maintenance · Akili Code</div></div></div>
+  <div class="stats">
+    <div class="stat"><div class="sl">Duration</div><div class="sv" style="color:var(--biz-ac)">120</div><div class="su">days</div></div>
+    <div class="stat"><div class="sl">Total study</div><div class="sv">~840h</div><div class="su">7h/day</div></div>
+    <div class="stat"><div class="sl">Business (B1)</div><div class="sv" style="color:var(--biz-ac)">360h</div><div class="su">3h/day</div></div>
+    <div class="stat"><div class="sl">CS maint. (B2)</div><div class="sv" style="color:var(--cs-ac)">240h</div><div class="su">2h/day</div></div>
+    <div class="stat"><div class="sl">Disc. math (B3)</div><div class="sv" style="color:var(--mth-ac)">240h</div><div class="su">2h/day</div></div>
+  </div>
+  <div class="cols">
+    <div class="sched">
+      <div class="ctitle">Daily schedule · Mon–Sat (shifted)</div>
+      <div class="tb"><div class="tt">08:00</div><div class="tbar B h3"><div class="trow"><span class="tn">Business & finance</span><span class="td">3h</span></div><div class="ts">Block 1 shifts from math to business<br>Corp finance → VC → investing → RE + marketing</div></div></div>
+      <div class="tb"><div class="tt">11:00</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">11:15</div><div class="tbar C h2"><div class="trow"><span class="tn">CS maintenance</span><span class="td">2h</span></div><div class="ts">1 LeetCode/day + Akili Code build<br>Trees & graphs (40) → binary search (20)</div></div></div>
+      <div class="tb"><div class="tt">13:15</div><div class="tbar K h1"><div class="trow"><span class="tn">Lunch + rest</span><span class="td">1h</span></div></div></div>
+      <div class="tb"><div class="tt">14:15</div><div class="tbar M h2"><div class="trow"><span class="tn">Discrete mathematics</span><span class="td">2h</span></div><div class="ts">Block 3 becomes math again<br>Logic → set theory → combinatorics → graph theory</div></div></div>
+      <div class="tb"><div class="tt">16:15</div><div class="tbar K hq"><div class="trow"><span class="tn">Break</span><span class="td">15m</span></div></div></div>
+      <div class="tb"><div class="tt">16:30</div><div class="tbar G hh"><div class="trow"><span class="tn">Guitar</span><span class="td">30m</span></div><div class="ts" style="color:var(--gtr-tx);opacity:.75">Full songs, improvisation, advanced pieces</div></div></div>
+      <div class="wnote"><b>Monthly rotation:</b> Jan Corp Finance → Feb Entrepreneurship → Mar Investing → Apr RE + Marketing.<br><b>CS floor:</b> Never drop below 1 LeetCode/day.</div>
+    </div>
+    <div class="sc-wrap">
+      <div class="sc open">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico B">💼</div><div class="sinf"><div class="sn">Block 1 — Business & finance (full Module 4)</div><div class="sd">Monthly rotation · Corp Finance → Startups → Investing → RE + Marketing</div></div><div class="spill B">3h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">January: Corporate finance</div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Time Value of Money: PV, FV, compounding, annuities, perpetuities</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">NPV & IRR investment criteria</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Financial statements: Income, Balance Sheet, Cash Flow; profitability/liquidity ratios</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">WACC, CAPM: cost of debt vs. cost of equity; FCF projections</div></div>
+          <div class="sechd">February: Entrepreneurship & startups</div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Lean Startup: Build-Measure-Learn loop, MVPs, Product-Market Fit verification</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">VC stages: Bootstrap → Angel → Seed → Series A/B/C → IPO</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Term sheets: pre/post-money valuation, liquidation preferences, anti-dilution</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Cap tables: founder dilution, SAFEs, convertible notes</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Unit economics: CAC, LTV, MRR, ARR, burn rate, runway</div></div>
+          <div class="sechd">March: Investing & stock market</div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Public equities, fixed income (bonds, YTM), derivatives (options, futures)</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">ETFs vs mutual funds; order types; Limit Order Book: bid-ask spreads, market makers</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Portfolio theory: risk/return, diversification, EMH, DCF, P/E, EV/EBITDA</div></div>
+          <div class="sechd">April: Real estate + marketing</div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Valuation: sales comparison, cost approach, income capitalization (cap rates, NOI)</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Finance: mortgage amortization, leverage, Net Operating Income structures</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Frameworks: 4 Ps, STP (Segmentation/Targeting/Positioning), AIDA funnel</div></div>
+          <div class="ti"><div class="dot B"></div><div class="titx">Execution: B2B vs B2C sales cycles, inbound/outbound lead generation</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico C">⚡</div><div class="sinf"><div class="sn">Block 2 — CS maintenance + Akili Code</div><div class="sd">LeetCode completion (150 total) · Portfolio finalization</div></div><div class="spill C">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Daily LeetCode — 150 total by April</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Trees & graphs: 40 problems — BFS/DFS, binary trees, matrix graphs, recursion</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Binary search & divide/conquer: 20 problems — log-scale search patterns</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Running total: 30 (Ph1) + 30 (Ph2) + 30 (Ph3) + 60 (Ph4) = 150 ✓</div></div>
+          <div class="sechd">Akili Code platform (Django)</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Free Kenyan coding education platform targeting KCSE students</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Curriculum: Python + web basics — accessible, low-bandwidth-first design</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">User auth, progress tracking, interactive exercise engine</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">GitHub public repo: documentation, README, deployment guide</div></div>
+          <div class="sechd">Portfolio finalization</div>
+          <div class="ti"><div class="dot C"></div><div class="titx">Single-page tech resume: contact, GitHub, skills, projects, education</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">GitHub profile: NaviSafi + Akili Code + Bird AI — all pinned & documented</div></div>
+          <div class="ti"><div class="dot C"></div><div class="titx">STAR story repository mapped to Google STEP, Microsoft Explore, Meta University criteria</div></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-hd" onclick="tog(this)"><div class="sico M">∀</div><div class="sinf"><div class="sn">Block 3 — Discrete mathematics</div><div class="sd">COSC 30 equivalent · Logic, proofs, combinatorics, graph theory</div></div><div class="spill M">2h/day</div><div class="schev">▾</div></div>
+        <div class="sc-body">
+          <div class="sechd">Logic & proofs</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Propositional & predicate logic, truth tables, logical equivalences</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Direct proofs, proof by contradiction, proof by contraposition</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Mathematical induction (weak and strong)</div></div>
+          <div class="sechd">Set theory & relations</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Unions, intersections, subsets, power sets, Cartesian products</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Functions: injective (one-to-one), surjective (onto), bijective, composition</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Equivalence relations & partial orderings</div></div>
+          <div class="sechd">Combinatorics & graph theory</div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Permutations, combinations, binomial coefficients, Pigeonhole Principle</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Graphs: vertices, edges, paths, cycles, trees, bipartite graphs</div></div>
+          <div class="ti"><div class="dot M"></div><div class="titx">Eulerian & Hamiltonian circuits and paths</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="msc">
+    <div class="ctitle">Phase 4 milestones</div>
+    <div class="msr"><div class="msdt">Jan 1</div><div class="msdot" style="background:var(--biz-ac)"></div><div class="msn">Phase 4 begins — business takes over Block 1</div><div class="msno">Schedule shifts</div></div>
+    <div class="msr"><div class="msdt">Jan 31</div><div class="msdot" style="background:var(--biz-ac)"></div><div class="msn">Corporate finance module complete: TVM, NPV, WACC, CAPM</div><div class="msno">Jan milestone</div></div>
+    <div class="msr"><div class="msdt">Feb 28</div><div class="msdot" style="background:var(--biz-ac)"></div><div class="msn">Entrepreneurship module: cap tables, SAFEs, unit economics</div><div class="msno">Feb milestone</div></div>
+    <div class="msr"><div class="msdt">Mar 2027</div><div class="msdot" style="background:var(--drt-ac)"></div><div class="msn">RD decisions: Harvard, Yale, Princeton, Brown, Columbia arrive</div><div class="msno">Decision window</div></div>
+    <div class="msr"><div class="msdt">Mar 31</div><div class="msdot" style="background:var(--biz-ac)"></div><div class="msn">Investing module: DCF, portfolio theory, options, ETFs complete</div><div class="msno">Mar milestone</div></div>
+    <div class="msr"><div class="msdt">Apr 15</div><div class="msdot" style="background:var(--cs-ac)"></div><div class="msn">Akili Code MVP: first Kenyan students onboarded</div><div class="msno">Platform launch</div></div>
+    <div class="msr"><div class="msdt">Apr 30</div><div class="msdot" style="background:var(--drt-ac)"></div><div class="msn">Gap year complete — 150 LeetCode · 2,163h studied · 5 modules done</div><div class="msno">→ University</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FULL MAP -->
+<div class="panel off" id="p-map">
+  <div style="font-size:15px;font-weight:500;color:var(--text-primary);margin-bottom:3px">Full curriculum map</div>
+  <div class="mapsub">Every topic from all 5 modules — tagged with the phase where it's covered.</div>
+  <div class="mleg">
+    <div class="leg"><div class="ldot" style="background:var(--mth-ac)"></div>Phase 1: Jun–Sep</div>
+    <div class="leg"><div class="ldot" style="background:var(--app-ac)"></div>Phase 2: Oct–Nov</div>
+    <div class="leg"><div class="ldot" style="background:var(--cs-ac)"></div>Phase 3: Nov–Dec</div>
+    <div class="leg"><div class="ldot" style="background:var(--biz-ac)"></div>Phase 4: Jan–Apr</div>
+    <div class="leg"><div class="ldot" style="background:var(--border-strong)"></div>Post-gap year</div>
+  </div>
+  <div class="mod open">
+    <div class="modhd" onclick="togM(this)"><div class="modico">∫</div><div class="modinf"><div class="modn">Module 1: Mathematics</div><div class="mods">Calculus · Linear algebra · Probability · Discrete math</div></div><div class="modchev">▾</div></div>
+    <div class="modb">
+      <div class="grp"><div class="grpt">1.1 Single-variable calculus (MATH 3 + MATH 8)</div>
+        <div class="mrow"><div class="mtop">Limits & continuity: graphical/algebraic eval, one-sided limits, IVT</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Differentiation: all rules, implicit, related rates, MVT, EVT, optimization</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Integration: Riemann, FTC, u-sub, by parts, partial fractions, areas/volumes</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Sequences & series: all convergence tests, power series, Taylor/Maclaurin</div><div class="ptag p1">PH 1</div></div>
+      </div>
+      <div class="grp"><div class="grpt">1.2 Multivariable calculus (MATH 13) — deferred to Dartmouth</div>
+        <div class="mrow"><div class="mtop">Vectors: dot/cross products, lines & planes in 3D space</div><div class="ptag ft">FUTURE</div></div>
+        <div class="mrow"><div class="mtop">Partial derivatives, gradients, directional derivatives, Lagrange multipliers</div><div class="ptag ft">FUTURE</div></div>
+        <div class="mrow"><div class="mtop">Double/triple integrals; Green's, Stokes' & Divergence Theorems</div><div class="ptag ft">FUTURE</div></div>
+      </div>
+      <div class="grp"><div class="grpt">1.3 Linear algebra (MATH 22)</div>
+        <div class="mrow"><div class="mtop">Systems of linear equations: matrix representation, Gaussian row reduction</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Matrix operations: multiplication, transposes, inverses, determinants</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Vector spaces: subspaces, Nul A, Col A, linear independence, basis, rank</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Eigenvalues/eigenvectors, diagonalization, Gram-Schmidt, least-squares</div><div class="ptag ft">FUTURE</div></div>
+      </div>
+      <div class="grp"><div class="grpt">1.4 Discrete mathematics (COSC 30)</div>
+        <div class="mrow"><div class="mtop">Logic & proofs: propositional/predicate logic, truth tables, induction</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Set theory: unions, intersections, power sets, functions (injective/surjective)</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Combinatorics: permutations, combinations, Pigeonhole Principle</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Graph theory: paths, cycles, trees, Eulerian & Hamiltonian circuits</div><div class="ptag p4">PH 4</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mod">
+    <div class="modhd" onclick="togM(this)"><div class="modico">⌨</div><div class="modinf"><div class="modn">Module 2: Computer science & data structures</div><div class="mods">Programming → DS → Algorithms → 150 LeetCode problems</div></div><div class="modchev">▾</div></div>
+    <div class="modb">
+      <div class="grp"><div class="grpt">2.1 Programming fundamentals & OOP (COSC 1 + COSC 10)</div>
+        <div class="mrow"><div class="mtop">Procedural: variables, control flow, functions, arrays, File I/O, exceptions</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">OOP: classes, inheritance, polymorphism, abstraction, heap vs. stack memory</div><div class="ptag p1">PH 1</div></div>
+      </div>
+      <div class="grp"><div class="grpt">2.2 Data structures (COSC 10 core)</div>
+        <div class="mrow"><div class="mtop">Analysis: Big O, Omega, Theta — iterative & recursive complexity</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Linear: linked lists (singly/doubly/circular), stacks, queues, priority queues</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Non-linear: binary trees, BSTs, balanced trees (AVL, RB), heaps</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Hash tables: hash functions, chaining, open addressing</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Graphs: adjacency matrices & adjacency lists</div><div class="ptag p2">PH 2</div></div>
+      </div>
+      <div class="grp"><div class="grpt">2.3 Algorithms core (COSC 31)</div>
+        <div class="mrow"><div class="mtop">Sorting: Bubble, Insertion, Selection, Merge, Quick, Heap Sort</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Tree traversals: In/Pre/Post-order, Level-order BFS</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Graph traversals: BFS & DFS (recursive & iterative)</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Greedy: Dijkstra's (→ NaviSafi), Prim's, Kruskal's MST</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Dynamic programming: memoization (top-down), tabulation (bottom-up)</div><div class="ptag p3">PH 3</div></div>
+      </div>
+      <div class="grp"><div class="grpt">LeetCode progression — 150 problems</div>
+        <div class="mrow"><div class="mtop">Arrays & hashing: 30 problems</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Two pointers & sliding window: 30 problems</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Stacks, queues & linked lists: 30 problems</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Trees & graphs: 40 problems</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Binary search & divide/conquer: 20 problems</div><div class="ptag p4">PH 4</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mod">
+    <div class="modhd" onclick="togM(this)"><div class="modico">📊</div><div class="modinf"><div class="modn">Module 3: Economics & econometrics</div><div class="mods">Microeconomics · Statistical inference · Regression analysis</div></div><div class="modchev">▾</div></div>
+    <div class="modb">
+      <div class="grp"><div class="grpt">3.1 Microeconomics (ECON 1) — SAT context + light reading in Ph1</div>
+        <div class="mrow"><div class="mtop">Supply & demand, elasticity, consumer/producer surplus, deadweight loss</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Consumer choice: budget constraints, indifference curves, utility maximization</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Production & costs: MC, MR, profit maximization (MR = MC)</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Market structures: perfect competition, monopoly, oligopoly (Nash equilibrium)</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Market failures: externalities, public goods, free-rider problem</div><div class="ptag p1">PH 1</div></div>
+      </div>
+      <div class="grp"><div class="grpt">3.2 Economic statistics & econometrics (ECON 10)</div>
+        <div class="mrow"><div class="mtop">Descriptive stats: central tendency, dispersion, skewness, kurtosis</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Probability: rules, conditional probability, Bayes' Theorem, distributions</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Statistical inference: CLT, confidence intervals, hypothesis testing</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Regression: OLS framework, R-squared, coefficients, multiple regression intro</div><div class="ptag p4">PH 4</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mod">
+    <div class="modhd" onclick="togM(this)"><div class="modico">💼</div><div class="modinf"><div class="modn">Module 4: Business, startups & investing</div><div class="mods">Corp Finance · Entrepreneurship · Investing · Real Estate · Marketing</div></div><div class="modchev">▾</div></div>
+    <div class="modb">
+      <div class="grp"><div class="grpt">4.1 Corporate finance (January 2027)</div>
+        <div class="mrow"><div class="mtop">TVM: PV, FV, compounding, annuities, perpetuities, NPV, IRR</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Financial statements: Income, Balance Sheet, Cash Flow; profitability/liquidity ratios</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">WACC, CAPM, FCF projections, cost of debt vs. cost of equity</div><div class="ptag p4">PH 4</div></div>
+      </div>
+      <div class="grp"><div class="grpt">4.2 Entrepreneurship & startups (February 2027)</div>
+        <div class="mrow"><div class="mtop">Lean Startup: Build-Measure-Learn, MVPs, PMF verification metrics</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">VC stages, term sheets, cap tables, SAFEs, convertible notes</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Unit economics: CAC, LTV, MRR, ARR, burn rate, runway</div><div class="ptag p4">PH 4</div></div>
+      </div>
+      <div class="grp"><div class="grpt">4.3 Investing & stock market (March 2027)</div>
+        <div class="mrow"><div class="mtop">Equities, fixed income, derivatives; ETFs, order types, Limit Order Book</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Portfolio theory: risk/return, diversification, EMH, DCF, P/E, EV/EBITDA</div><div class="ptag p4">PH 4</div></div>
+      </div>
+      <div class="grp"><div class="grpt">4.4 Real estate + 4.5 Marketing (April 2027)</div>
+        <div class="mrow"><div class="mtop">Real estate: cap rates, NOI, mortgage amortization, leverage</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Marketing: 4 Ps, STP framework, AIDA funnel, B2B/B2C sales cycles</div><div class="ptag p4">PH 4</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="mod">
+    <div class="modhd" onclick="togM(this)"><div class="modico">🛠</div><div class="modinf"><div class="modn">Module 5: Technical portfolio & interview execution</div><div class="mods">Git/CLI · 150 LeetCode · 4 portfolio projects · Resume & STAR prep</div></div><div class="modchev">▾</div></div>
+    <div class="modb">
+      <div class="grp"><div class="grpt">5.1 Environment & version control</div>
+        <div class="mrow"><div class="mtop">CLI: terminal navigation (cd, ls, mkdir, pwd, rm, touch)</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Git lifecycle: init, add, commit, branch, merge; GitHub: push, pull, clone, README</div><div class="ptag p1">PH 1</div></div>
+      </div>
+      <div class="grp"><div class="grpt">5.2 LeetCode roadmap (runs across all 4 phases)</div>
+        <div class="mrow"><div class="mtop">Arrays & hashing: 30 problems</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">Two pointers & sliding window: 30 problems</div><div class="ptag p2">PH 2</div></div>
+        <div class="mrow"><div class="mtop">Stacks, queues & linked lists: 30 problems</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Trees & graphs: 40 problems</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Binary search & divide/conquer: 20 problems</div><div class="ptag p4">PH 4</div></div>
+      </div>
+      <div class="grp"><div class="grpt">5.3 Portfolio projects</div>
+        <div class="mrow"><div class="mtop">Bird AI identification website (learning project, in progress)</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">MyOS — personal OS dashboard (Django, in progress)</div><div class="ptag p1">PH 1</div></div>
+        <div class="mrow"><div class="mtop">NaviSafi — USSD routing engine (FastAPI + OSMnx + Africa's Talking API)</div><div class="ptag p3">PH 3</div></div>
+        <div class="mrow"><div class="mtop">Akili Code — free Kenyan coding education platform (Django)</div><div class="ptag p4">PH 4</div></div>
+        <div class="mrow"><div class="mtop">Resume assembly + STAR behavioral prep (Google STEP, Microsoft Explore, Meta University)</div><div class="ptag p4">PH 4</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ed1=new Date('2026-11-01');
+  var now=new Date();now.setHours(0,0,0,0);
+  var d=Math.ceil((ed1-now)/86400000);
+  var el=document.getElementById('cntd');
+  if(el)el.textContent=d>0?d:'0';
+})();
+document.querySelectorAll('.panel').forEach(function(p){p.classList.add('off');});
+document.getElementById('p-1').classList.remove('off');
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('act');});
+    document.querySelectorAll('.panel').forEach(function(x){x.classList.add('off');});
+    this.classList.add('act');
+    var id='p-'+this.dataset.p;
+    var el=document.getElementById(id);
+    if(el)el.classList.remove('off');
+  });
+});
+function tog(hd){hd.closest('.sc').classList.toggle('open');}
+function togM(hd){hd.closest('.mod').classList.toggle('open');}
+</script>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dartmouth CS+Economics and Princeton ORFE study timeline with daily blocks, Dartmouth ED phase planning, research notes, and hobbies.">
-  <title>Dartmouth-First Study Schedule | Prep Hub</title>
+  <meta name="description" content="Dartmouth-first gap year master schedule with study phases, application research, service commitments, home chores, and portfolio work.">
+  <title>Dartmouth-First Gap Year Schedule | Prep Hub</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
-<body data-page="dartmouth_cs_econ_study_schedule">
+<body data-page="dartmouth_gap_year_schedule">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="site-shell">
     <aside class="sidebar" id="site-sidebar">
@@ -35,25 +35,1066 @@
         <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="site-sidebar" aria-expanded="false">Menu</button>
         <div class="topbar-title">
           <div class="crumb">Daily plan</div>
-          <div class="current-title">Dartmouth-First Study Schedule</div>
+          <div class="current-title">Dartmouth-First Gap Year Schedule</div>
         </div>
         <label class="search-field">
           <span>Search this guide</span>
-          <input id="searchInput" type="search" autocomplete="off" placeholder="Filter cards, topics, resources">
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Filter phases, research, service, chores">
         </label>
       </header>
       <main id="main-content" class="content" tabindex="-1">
         <header class="page-hero">
-          <div class="eyebrow">Daily plan</div>
-          <h1>Dartmouth-First Study Schedule</h1>
-          <p>Dartmouth CS+Economics and Princeton ORFE study timeline with daily blocks, Dartmouth ED phase planning, research notes, and hobbies.</p>
+          <div class="eyebrow">Dartmouth first</div>
+          <h1>Gap Year Master Schedule</h1>
+          <p>Dartmouth CS modified with Economics remains the main goal. This plan uses the gap year for technical depth, ED application execution, portfolio proof, service, home responsibility, and a Princeton ORFE secondary path.</p>
         </header>
         <section class="guide-panel" data-search-scope>
-<h2 class="sr-only">Study schedule for Dartmouth CS+Economics as the ED dream school and Princeton ORFE as the secondary option, with daily timeline, weekly phase planner, research notes, and hobbies.</h2>
+          <h2 class="sr-only">Dartmouth-first gap year master schedule from June 2026 to April 2027, with research, volunteering, chores, and study phases.</h2>
 
-<div class="guide-shell"><div class="nav" id="mainNav"></div>
-<div id="app"></div>
-</div>
+          <style>
+            .gy {
+              --gy-math: #1f9b72;
+              --gy-math-bg: rgba(31, 155, 114, 0.13);
+              --gy-cs: #7c6ee6;
+              --gy-cs-bg: rgba(124, 110, 230, 0.13);
+              --gy-app: var(--dartmouth);
+              --gy-app-bg: var(--dartmouth-bg);
+              --gy-biz: #d19a32;
+              --gy-biz-bg: rgba(209, 154, 50, 0.13);
+              --gy-service: #d36b85;
+              --gy-service-bg: rgba(211, 107, 133, 0.13);
+              --gy-home: #6fa7d8;
+              --gy-home-bg: rgba(111, 167, 216, 0.13);
+              --gy-creative: #b07bdc;
+              --gy-creative-bg: rgba(176, 123, 220, 0.13);
+              display: grid;
+              gap: 0.9rem;
+            }
+
+            body.light .gy {
+              --gy-math: #08704f;
+              --gy-math-bg: rgba(8, 112, 79, 0.1);
+              --gy-cs: #4c42aa;
+              --gy-cs-bg: rgba(76, 66, 170, 0.1);
+              --gy-biz: #8a5b09;
+              --gy-biz-bg: rgba(138, 91, 9, 0.1);
+              --gy-service: #a83c59;
+              --gy-service-bg: rgba(168, 60, 89, 0.1);
+              --gy-home: #24688f;
+              --gy-home-bg: rgba(36, 104, 143, 0.1);
+              --gy-creative: #7142a6;
+              --gy-creative-bg: rgba(113, 66, 166, 0.1);
+            }
+
+            .gy button {
+              font: inherit;
+            }
+
+            .gy-top {
+              position: sticky;
+              top: 86px;
+              z-index: 8;
+              display: grid;
+              gap: 0.75rem;
+              border: 1px solid var(--border);
+              border-radius: var(--radius-lg);
+              background: color-mix(in srgb, var(--surface) 94%, var(--bg) 6%);
+              box-shadow: var(--shadow);
+              padding: 0.9rem;
+            }
+
+            .gy-top-row {
+              display: flex;
+              justify-content: space-between;
+              gap: 1rem;
+              align-items: start;
+            }
+
+            .gy-title {
+              color: var(--text);
+              font-size: clamp(1.1rem, 2vw, 1.45rem);
+              font-weight: 850;
+              line-height: 1.1;
+            }
+
+            .gy-sub {
+              color: var(--text-muted);
+              font-size: 0.76rem;
+              font-weight: 750;
+              letter-spacing: 0.04em;
+              margin-top: 0.25rem;
+              text-transform: uppercase;
+            }
+
+            .gy-count {
+              min-width: 132px;
+              border: 1px solid var(--dartmouth-bd);
+              border-radius: var(--radius-md);
+              background: var(--dartmouth-bg);
+              color: var(--dartmouth);
+              padding: 0.55rem 0.7rem;
+              text-align: right;
+            }
+
+            .gy-count span {
+              display: block;
+              font-size: 0.65rem;
+              font-weight: 900;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+            }
+
+            .gy-count strong {
+              display: block;
+              font-size: 1.7rem;
+              line-height: 1;
+            }
+
+            .gy-tabs {
+              display: flex;
+              gap: 0.35rem;
+              overflow-x: auto;
+              padding-bottom: 0.15rem;
+              scrollbar-width: none;
+            }
+
+            .gy-tabs::-webkit-scrollbar {
+              display: none;
+            }
+
+            .gy-tab {
+              flex: 0 0 auto;
+              border: 1px solid var(--border);
+              border-radius: var(--radius-md);
+              background: var(--surface-2);
+              color: var(--text-soft);
+              cursor: pointer;
+              padding: 0.55rem 0.72rem;
+              text-align: left;
+            }
+
+            .gy-tab strong,
+            .gy-tab span {
+              display: block;
+            }
+
+            .gy-tab strong {
+              font-size: 0.78rem;
+              line-height: 1.15;
+            }
+
+            .gy-tab span {
+              color: var(--text-muted);
+              font-size: 0.66rem;
+              margin-top: 0.08rem;
+            }
+
+            .gy-tab[aria-selected="true"] {
+              border-color: transparent;
+              background: var(--text);
+              color: var(--bg);
+            }
+
+            .gy-tab[aria-selected="true"] span {
+              color: color-mix(in srgb, var(--bg) 70%, var(--text) 30%);
+            }
+
+            .gy-panel {
+              display: none;
+              animation: gyFade 0.16s ease;
+            }
+
+            .gy-panel.is-active {
+              display: grid;
+              gap: 0.9rem;
+            }
+
+            @keyframes gyFade {
+              from { opacity: 0; transform: translateY(3px); }
+              to { opacity: 1; transform: translateY(0); }
+            }
+
+            .gy-phase-head,
+            .gy-card,
+            .gy-milestones,
+            .gy-note,
+            .gy-map-card {
+              border: 1px solid var(--border);
+              border-radius: var(--radius-lg);
+              background: var(--surface);
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.11);
+            }
+
+            .gy-phase-head {
+              display: grid;
+              grid-template-columns: minmax(0, 1fr) auto;
+              gap: 1rem;
+              align-items: center;
+              padding: 1rem;
+            }
+
+            .gy-kicker {
+              width: max-content;
+              border-radius: 999px;
+              padding: 0.18rem 0.55rem;
+              font-size: 0.68rem;
+              font-weight: 900;
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+            }
+
+            .gy-kicker.math { background: var(--gy-math-bg); color: var(--gy-math); }
+            .gy-kicker.app { background: var(--gy-app-bg); color: var(--gy-app); }
+            .gy-kicker.cs { background: var(--gy-cs-bg); color: var(--gy-cs); }
+            .gy-kicker.biz { background: var(--gy-biz-bg); color: var(--gy-biz); }
+            .gy-kicker.service { background: var(--gy-service-bg); color: var(--gy-service); }
+
+            .gy-phase-title {
+              color: var(--text);
+              font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+              font-weight: 850;
+              line-height: 1.08;
+              margin-top: 0.45rem;
+            }
+
+            .gy-phase-meta,
+            .gy-copy {
+              color: var(--text-soft);
+              font-size: 0.88rem;
+              line-height: 1.65;
+              margin-top: 0.32rem;
+            }
+
+            .gy-stats {
+              display: grid;
+              grid-template-columns: repeat(5, minmax(0, 1fr));
+              gap: 0.45rem;
+            }
+
+            .gy-stat {
+              border: 1px solid var(--border-soft);
+              border-radius: var(--radius-md);
+              background: var(--surface-2);
+              min-height: 74px;
+              padding: 0.65rem;
+            }
+
+            .gy-stat span {
+              display: block;
+              color: var(--text-muted);
+              font-size: 0.64rem;
+              font-weight: 900;
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+            }
+
+            .gy-stat strong {
+              display: block;
+              color: var(--text);
+              font-size: 1.1rem;
+              line-height: 1.15;
+              margin-top: 0.18rem;
+            }
+
+            .gy-stat small {
+              color: var(--text-muted);
+              font-size: 0.7rem;
+            }
+
+            .gy-grid {
+              display: grid;
+              grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1fr);
+              gap: 0.8rem;
+            }
+
+            .gy-card {
+              overflow: hidden;
+            }
+
+            .gy-card-inner {
+              display: grid;
+              gap: 0.65rem;
+              padding: 0.95rem;
+            }
+
+            .gy-card-title {
+              color: var(--text-muted);
+              font-size: 0.68rem;
+              font-weight: 900;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+            }
+
+            .gy-day {
+              display: grid;
+              gap: 0.3rem;
+            }
+
+            .gy-block {
+              display: grid;
+              grid-template-columns: 55px minmax(0, 1fr);
+              gap: 0.55rem;
+              align-items: stretch;
+              border: 1px solid var(--border-soft);
+              border-radius: var(--radius-sm);
+              background: var(--surface-2);
+              padding: 0.55rem;
+            }
+
+            .gy-time {
+              color: var(--text-muted);
+              font-size: 0.7rem;
+              font-weight: 850;
+              text-align: right;
+            }
+
+            .gy-task strong {
+              display: flex;
+              justify-content: space-between;
+              gap: 0.5rem;
+              color: var(--text);
+              font-size: 0.84rem;
+              line-height: 1.25;
+            }
+
+            .gy-task p {
+              margin: 0.22rem 0 0;
+              color: var(--text-soft);
+              font-size: 0.76rem;
+              line-height: 1.45;
+            }
+
+            .gy-block.math { border-color: color-mix(in srgb, var(--gy-math) 34%, var(--border) 66%); background: var(--gy-math-bg); }
+            .gy-block.cs { border-color: color-mix(in srgb, var(--gy-cs) 34%, var(--border) 66%); background: var(--gy-cs-bg); }
+            .gy-block.app { border-color: var(--dartmouth-bd); background: var(--dartmouth-bg); }
+            .gy-block.biz { border-color: color-mix(in srgb, var(--gy-biz) 34%, var(--border) 66%); background: var(--gy-biz-bg); }
+            .gy-block.service { border-color: color-mix(in srgb, var(--gy-service) 34%, var(--border) 66%); background: var(--gy-service-bg); }
+            .gy-block.home { border-color: color-mix(in srgb, var(--gy-home) 34%, var(--border) 66%); background: var(--gy-home-bg); }
+            .gy-block.creative { border-color: color-mix(in srgb, var(--gy-creative) 34%, var(--border) 66%); background: var(--gy-creative-bg); }
+
+            .gy-accordions {
+              display: grid;
+              gap: 0.55rem;
+            }
+
+            .gy-detail {
+              border: 1px solid var(--border-soft);
+              border-radius: var(--radius-md);
+              background: var(--surface);
+              overflow: hidden;
+            }
+
+            .gy-detail summary {
+              display: grid;
+              grid-template-columns: minmax(0, 1fr) auto;
+              gap: 0.75rem;
+              align-items: center;
+              cursor: pointer;
+              list-style: none;
+              padding: 0.78rem 0.9rem;
+            }
+
+            .gy-detail summary::-webkit-details-marker {
+              display: none;
+            }
+
+            .gy-detail summary strong {
+              display: block;
+              color: var(--text);
+              font-size: 0.93rem;
+            }
+
+            .gy-detail summary span {
+              display: block;
+              color: var(--text-muted);
+              font-size: 0.73rem;
+              margin-top: 0.12rem;
+            }
+
+            .gy-pill {
+              border-radius: 999px;
+              background: var(--surface-2);
+              color: var(--text-soft);
+              padding: 0.18rem 0.48rem;
+              font-size: 0.68rem;
+              font-weight: 850;
+              white-space: nowrap;
+            }
+
+            .gy-detail-body {
+              display: grid;
+              gap: 0.5rem;
+              border-top: 1px solid var(--border-soft);
+              padding: 0.85rem 0.9rem 0.95rem;
+            }
+
+            .gy-topic {
+              border-left: 3px solid var(--accent);
+              padding-left: 0.65rem;
+            }
+
+            .gy-topic h4 {
+              margin: 0 0 0.18rem;
+              color: var(--text);
+              font-size: 0.78rem;
+              letter-spacing: 0.04em;
+              text-transform: uppercase;
+            }
+
+            .gy-topic p,
+            .gy-topic li {
+              color: var(--text-soft);
+              font-size: 0.82rem;
+              line-height: 1.55;
+            }
+
+            .gy-topic ul {
+              margin: 0;
+              padding-left: 1rem;
+            }
+
+            .gy-milestones {
+              padding: 0.95rem;
+            }
+
+            .gy-ms-list {
+              display: grid;
+              gap: 0.4rem;
+              margin-top: 0.65rem;
+            }
+
+            .gy-ms {
+              display: grid;
+              grid-template-columns: 78px minmax(0, 1fr) auto;
+              gap: 0.7rem;
+              align-items: center;
+              border-top: 1px solid var(--border-soft);
+              padding-top: 0.55rem;
+            }
+
+            .gy-ms:first-child {
+              border-top: 0;
+              padding-top: 0;
+            }
+
+            .gy-ms time {
+              color: var(--text-muted);
+              font-size: 0.72rem;
+              font-weight: 850;
+            }
+
+            .gy-ms strong {
+              color: var(--text);
+              font-size: 0.83rem;
+            }
+
+            .gy-ms span {
+              color: var(--text-muted);
+              font-size: 0.72rem;
+            }
+
+            .gy-note {
+              border-color: var(--dartmouth-bd);
+              background: var(--dartmouth-bg);
+              color: var(--dartmouth);
+              padding: 0.9rem 1rem;
+              font-size: 0.86rem;
+              line-height: 1.65;
+            }
+
+            .gy-note strong {
+              color: inherit;
+            }
+
+            .gy-research-grid,
+            .gy-service-grid,
+            .gy-map-grid {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+              gap: 0.8rem;
+            }
+
+            .gy-map-grid {
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .gy-map-card {
+              display: grid;
+              gap: 0.55rem;
+              padding: 0.95rem;
+            }
+
+            .gy-map-card h3 {
+              margin: 0;
+              color: var(--text);
+              font-size: 1rem;
+            }
+
+            .gy-map-card p {
+              margin: 0;
+              color: var(--text-soft);
+              font-size: 0.82rem;
+              line-height: 1.55;
+            }
+
+            .gy-tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.35rem;
+            }
+
+            .gy-tags span {
+              border-radius: 999px;
+              background: var(--surface-2);
+              color: var(--text-soft);
+              padding: 0.18rem 0.45rem;
+              font-size: 0.68rem;
+              font-weight: 800;
+            }
+
+            @media (max-width: 920px) {
+              .gy-top {
+                top: 148px;
+              }
+
+              .gy-phase-head,
+              .gy-grid,
+              .gy-research-grid,
+              .gy-service-grid,
+              .gy-map-grid {
+                grid-template-columns: 1fr;
+              }
+
+              .gy-stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+              }
+            }
+
+            @media (max-width: 580px) {
+              .gy-top {
+                position: static;
+              }
+
+              .gy-top-row {
+                flex-direction: column;
+              }
+
+              .gy-count {
+                width: 100%;
+                text-align: left;
+              }
+
+              .gy-stats {
+                grid-template-columns: 1fr;
+              }
+
+              .gy-ms {
+                grid-template-columns: 1fr;
+                gap: 0.15rem;
+              }
+            }
+          </style>
+
+          <div class="gy">
+            <div class="gy-top">
+              <div class="gy-top-row">
+                <div>
+                  <div class="gy-title">Dartmouth-First Gap Year Schedule</div>
+                  <div class="gy-sub">Immanuel · Jun 2026 to Apr 2027 · 309 days · 2,163 study hours · Dartmouth ED1 first</div>
+                </div>
+                <div class="gy-count" aria-live="polite">
+                  <span>Dartmouth ED1</span>
+                  <strong id="ed-count">--</strong>
+                  <span>days remaining</span>
+                </div>
+              </div>
+              <div class="gy-tabs" role="tablist" aria-label="Schedule sections">
+                <button class="gy-tab" type="button" role="tab" aria-selected="true" aria-controls="gy-foundation" data-gy-tab="foundation"><strong>Foundation</strong><span>Jun-Sep</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-application" data-gy-tab="application"><strong>Application</strong><span>Oct-Nov 1</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-build" data-gy-tab="build"><strong>Build</strong><span>Nov-Dec</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-business" data-gy-tab="business"><strong>Business</strong><span>Jan-Apr</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-research" data-gy-tab="research"><strong>Research</strong><span>Dartmouth first</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-service" data-gy-tab="service"><strong>Service + Home</strong><span>Weekly rhythm</span></button>
+                <button class="gy-tab" type="button" role="tab" aria-selected="false" aria-controls="gy-map" data-gy-tab="map"><strong>Full Map</strong><span>All modules</span></button>
+              </div>
+            </div>
+
+            <div class="gy-panel is-active" id="gy-foundation" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker math">Phase 1</div>
+                  <div class="gy-phase-title">Foundation</div>
+                  <div class="gy-phase-meta">Jun 25-Sep 30, 2026 · SAT prep, Python/OOP/linear data structures, single-variable calculus, and a steady Dartmouth research note-bank.</div>
+                </div>
+                <div class="gy-stats">
+                  <div class="gy-stat"><span>Duration</span><strong>97</strong><small>days</small></div>
+                  <div class="gy-stat"><span>Study</span><strong>~679h</strong><small>7h/day</small></div>
+                  <div class="gy-stat"><span>Math</span><strong>291h</strong><small>calculus</small></div>
+                  <div class="gy-stat"><span>CS</span><strong>194h</strong><small>Python + DS</small></div>
+                  <div class="gy-stat"><span>SAT</span><strong>194h</strong><small>1500+ target</small></div>
+                </div>
+              </div>
+
+              <div class="gy-grid">
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-card-title">Daily schedule · Mon-Sat</div>
+                    <div class="gy-day">
+                      <div class="gy-block math"><div class="gy-time">08:00</div><div class="gy-task"><strong>Mathematics <span>3h</span></strong><p>Single-variable calculus: limits, derivatives, integration, sequences, series.</p></div></div>
+                      <div class="gy-block cs"><div class="gy-time">11:15</div><div class="gy-task"><strong>CS <span>2h</span></strong><p>Python, OOP, linked lists, stacks, queues, arrays and hashing.</p></div></div>
+                      <div class="gy-block app"><div class="gy-time">14:15</div><div class="gy-task"><strong>SAT prep <span>2h</span></strong><p>Math and Reading/Writing drills, with a weekly full mock test on Saturday.</p></div></div>
+                      <div class="gy-block creative"><div class="gy-time">16:30</div><div class="gy-task"><strong>Guitar <span>30m</span></strong><p>Chord transitions, technique, and music theory. Friday can become a short video-editing practice block.</p></div></div>
+                      <div class="gy-block home"><div class="gy-time">17:00</div><div class="gy-task"><strong>Home chores <span>30m</span></strong><p>Dishes, room reset, laundry rotation, cooking prep, or compound cleanup.</p></div></div>
+                      <div class="gy-block service"><div class="gy-time">Weekly</div><div class="gy-task"><strong>Service touchpoint <span>2-4h</span></strong><p>Saturday dog shelter shift when available; one Red Cross training/admin hour every other week.</p></div></div>
+                    </div>
+                    <div class="gy-copy">Sunday stays a real rest day: guitar, light review only if wanted, family time, chores reset, and no guilt.</div>
+                  </div>
+                </div>
+
+                <div class="gy-accordions">
+                  <details class="gy-detail" open data-search-item>
+                    <summary><div><strong>Mathematics - Single-variable calculus</strong><span>MATH 3 + MATH 8 equivalent · placement exam preparation</span></div><span class="gy-pill">3h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Limits and continuity</h4><p>Graphical and algebraic limits, one-sided limits, limits at infinity, continuity, IVT.</p></div>
+                      <div class="gy-topic"><h4>Differentiation</h4><p>Derivative definition, Power/Product/Quotient/Chain rules, implicit differentiation, related rates, MVT, EVT, optimization, curve sketching, L'Hopital's Rule.</p></div>
+                      <div class="gy-topic"><h4>Integration and series</h4><p>Riemann sums, FTC, u-substitution, integration by parts, partial fractions, trig substitution, areas, volumes, convergence tests, Taylor and Maclaurin series.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>CS - Python to linear data structures</strong><span>COSC 1 + COSC 10 foundation · interview readiness begins</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Programming</h4><p>Variables, data types, control flow, functions, call stack, file I/O, exceptions.</p></div>
+                      <div class="gy-topic"><h4>OOP</h4><p>Classes, constructors, encapsulation, inheritance, polymorphism, abstraction, stack vs. heap thinking.</p></div>
+                      <div class="gy-topic"><h4>Data structures</h4><p>Big O, linked lists, stacks, queues, hash maps, hash sets, and 30 arrays/hashing LeetCode problems.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>SAT preparation</strong><span>September 2026 sitting · target 1500+</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Math</h4><p>Algebra, functions, problem solving and data analysis, geometry, trigonometry, timed drills.</p></div>
+                      <div class="gy-topic"><h4>Reading and writing</h4><p>Craft and structure, inference, central idea, textual evidence, grammar, usage, punctuation.</p></div>
+                      <div class="gy-topic"><h4>Practice regime</h4><p>One weekly full timed mock, daily 20-question targeted drill, and an error log for every wrong answer pattern.</p></div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="gy-milestones" data-search-item>
+                <div class="gy-card-title">Phase 1 milestones</div>
+                <div class="gy-ms-list">
+                  <div class="gy-ms"><time>Jun 25</time><strong>Gap year begins - day 1</strong><span>Phase start</span></div>
+                  <div class="gy-ms"><time>Aug 2026</time><strong>Full SAT practice test under timed conditions</strong><span>Calibrate</span></div>
+                  <div class="gy-ms"><time>Sep 2026</time><strong>SAT sitting - target 1500+</strong><span>Primary score goal</span></div>
+                  <div class="gy-ms"><time>Sep 30</time><strong>Single-variable calculus complete and 30 LeetCode problems done</strong><span>Phase close</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-application" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker app">Phase 2</div>
+                  <div class="gy-phase-title">Application Sprint</div>
+                  <div class="gy-phase-meta">Oct 1-Nov 1, 2026 · Dartmouth ED1 essays, linear algebra, non-linear data structures, application materials, and recommender coordination.</div>
+                </div>
+                <div class="gy-stats">
+                  <div class="gy-stat"><span>Duration</span><strong>32</strong><small>days</small></div>
+                  <div class="gy-stat"><span>Study</span><strong>~224h</strong><small>7h/day</small></div>
+                  <div class="gy-stat"><span>Math</span><strong>96h</strong><small>linear algebra</small></div>
+                  <div class="gy-stat"><span>CS</span><strong>64h</strong><small>trees + graphs</small></div>
+                  <div class="gy-stat"><span>App</span><strong>64h</strong><small>Dartmouth ED</small></div>
+                </div>
+              </div>
+
+              <div class="gy-note" data-search-item><strong>Dartmouth is the main target:</strong> essay quality beats every other deliverable in this phase. The application should be assembled by October 28, leaving a three-day buffer before the November 1 ED deadline.</div>
+
+              <div class="gy-grid">
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-card-title">Daily schedule · Mon-Sat</div>
+                    <div class="gy-day">
+                      <div class="gy-block math"><div class="gy-time">08:00</div><div class="gy-task"><strong>Mathematics <span>3h</span></strong><p>Linear algebra: matrices, vector spaces, column/null spaces, basis, rank.</p></div></div>
+                      <div class="gy-block cs"><div class="gy-time">11:15</div><div class="gy-task"><strong>CS <span>2h</span></strong><p>Non-linear data structures, sorting algorithms, trees, heaps, hash tables, graphs.</p></div></div>
+                      <div class="gy-block app"><div class="gy-time">14:15</div><div class="gy-task"><strong>Dartmouth ED1 <span>2h</span></strong><p>Essays, activities list, CSS Profile, faculty research, recommendation coordination.</p></div></div>
+                      <div class="gy-block creative"><div class="gy-time">16:30</div><div class="gy-task"><strong>Guitar <span>30m</span></strong><p>Chord transitions and full songs. Keep it light during the ED writing sprint.</p></div></div>
+                      <div class="gy-block home"><div class="gy-time">17:00</div><div class="gy-task"><strong>Home chores <span>30m</span></strong><p>Keep the room, laundry, dishes, and family-help tasks from piling up during essay season.</p></div></div>
+                      <div class="gy-block service"><div class="gy-time">Sat</div><div class="gy-task"><strong>Service minimum <span>2h</span></strong><p>Dog shelter volunteering or Red Cross training, unless it conflicts with final ED submission work.</p></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gy-accordions">
+                  <details class="gy-detail" open data-search-item>
+                    <summary><div><strong>Dartmouth ED1 application</strong><span>Nov 1 deadline · essays are the primary deliverable</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Essay order</h4><ul><li>Common App main essay should be finalized entering Phase 2.</li><li>Dartmouth roommate prompt: personality, warmth, and daily life.</li><li>Community values prompt: how you contribute to a peer group.</li><li>Additional info angle: CS modified with Economics, Kenya context, gap year.</li></ul></div>
+                      <div class="gy-topic"><h4>Application materials</h4><p>Activities list, CSS Profile and aid documents, two teacher recommendations, counselor coordination, final testing/reporting review.</p></div>
+                      <div class="gy-topic"><h4>Dartmouth-specific research</h4><p>CS modified with Economics, D-Plan leave term, DCSI funding for Kenya work, faculty in systems, algorithms, security, HCI, and economics.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>Mathematics - Linear algebra</strong><span>MATH 22 equivalent · matrices, vector spaces, rank</span></div><span class="gy-pill">3h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Core topics</h4><p>Matrix representation of systems, Gaussian and Gauss-Jordan elimination, matrix operations, transposes, inverses, determinants.</p></div>
+                      <div class="gy-topic"><h4>Vector spaces</h4><p>Subspaces, Null Space, Column Space, linear independence, basis, dimension, and rank.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>CS - Non-linear DS and algorithms intro</strong><span>COSC 10 completion + COSC 31 intro</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Data structures</h4><p>Binary trees, BSTs, AVL/Red-Black concepts, heaps, hash tables, graph representations.</p></div>
+                      <div class="gy-topic"><h4>Algorithms</h4><p>Bubble, insertion, selection, merge, quick, heap sort, tree traversals, two pointers, sliding window.</p></div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="gy-milestones" data-search-item>
+                <div class="gy-card-title">Phase 2 milestones</div>
+                <div class="gy-ms-list">
+                  <div class="gy-ms"><time>Oct 1</time><strong>Application sprint begins</strong><span>SAT done</span></div>
+                  <div class="gy-ms"><time>Oct 15</time><strong>All Dartmouth supplement essays drafted</strong><span>Revision window</span></div>
+                  <div class="gy-ms"><time>Oct 22</time><strong>External feedback incorporated</strong><span>Polish pass</span></div>
+                  <div class="gy-ms"><time>Oct 28</time><strong>Application fully assembled and ready</strong><span>3-day buffer</span></div>
+                  <div class="gy-ms"><time>Nov 1</time><strong>Dartmouth ED1 deadline - submit</strong><span>Main goal</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-build" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker cs">Phase 3</div>
+                  <div class="gy-phase-title">Build</div>
+                  <div class="gy-phase-meta">Nov 2-Dec 31, 2026 · NaviSafi USSD router, probability and statistics, graph algorithms, RD backup applications, and Dartmouth ED decision readiness.</div>
+                </div>
+                <div class="gy-stats">
+                  <div class="gy-stat"><span>Duration</span><strong>60</strong><small>days</small></div>
+                  <div class="gy-stat"><span>Study</span><strong>~420h</strong><small>7h/day</small></div>
+                  <div class="gy-stat"><span>Math</span><strong>180h</strong><small>probability</small></div>
+                  <div class="gy-stat"><span>CS</span><strong>120h</strong><small>graphs</small></div>
+                  <div class="gy-stat"><span>Build</span><strong>120h</strong><small>NaviSafi + RD</small></div>
+                </div>
+              </div>
+
+              <div class="gy-grid">
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-card-title">Daily schedule · Mon-Sat</div>
+                    <div class="gy-day">
+                      <div class="gy-block math"><div class="gy-time">08:00</div><div class="gy-task"><strong>Math <span>3h</span></strong><p>Probability and statistics: descriptive stats, distributions, inference.</p></div></div>
+                      <div class="gy-block cs"><div class="gy-time">11:15</div><div class="gy-task"><strong>CS + project <span>2h</span></strong><p>BFS/DFS, Dijkstra's, A*, dynamic programming, graph algorithms.</p></div></div>
+                      <div class="gy-block cs"><div class="gy-time">14:15</div><div class="gy-task"><strong>NaviSafi + RD apps <span>2h</span></strong><p>OSMnx, NetworkX, FastAPI, Africa's Talking API, Princeton/MIT/Harvard/Yale essays if needed.</p></div></div>
+                      <div class="gy-block creative"><div class="gy-time">16:30</div><div class="gy-task"><strong>Guitar/video <span>30m</span></strong><p>Guitar repertoire, fingerpicking, or a short NaviSafi/Akili Code video-editing practice session.</p></div></div>
+                      <div class="gy-block service"><div class="gy-time">Weekly</div><div class="gy-task"><strong>Volunteer work <span>3h</span></strong><p>One dog shelter shift or Red Cross service/training block. Keep a reflection log for application updates.</p></div></div>
+                      <div class="gy-block home"><div class="gy-time">Daily</div><div class="gy-task"><strong>Home chores <span>30m</span></strong><p>Daily reset plus one deeper Saturday family/home task before free time.</p></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gy-accordions">
+                  <details class="gy-detail" open data-search-item>
+                    <summary><div><strong>NaviSafi USSD routing engine</strong><span>Technical centerpiece after Dartmouth ED submission</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Build stack</h4><p>OSMnx for Nairobi road data, NetworkX for Dijkstra and A*, FastAPI endpoints, Africa's Talking USSD sessions, offline-first design.</p></div>
+                      <div class="gy-topic"><h4>Portfolio proof</h4><p>Full GitHub docs, README, architecture diagrams, demo video, deployment notes, and a clear explanation of why this matters in low-connectivity contexts.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>Probability and statistics</strong><span>ECON 10 / quant foundation</span></div><span class="gy-pill">3h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Core topics</h4><p>Mean, median, variance, standard deviation, probability rules, conditional probability, independence, Bayes' Theorem.</p></div>
+                      <div class="gy-topic"><h4>Inference</h4><p>Binomial and normal distributions, t-distribution, Central Limit Theorem, confidence intervals, hypothesis tests, p-values, z-tests, t-tests.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>RD applications if needed</strong><span>Secondary plan stays alive without dethroning Dartmouth</span></div><span class="gy-pill">backup</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Application logic</h4><p>If Dartmouth admits in mid-December, withdraw pending applications. If deferred or denied, move Princeton ORFE and other RD applications into final polish.</p></div>
+                      <div class="gy-topic"><h4>Essay angle</h4><p>Princeton ORFE emphasizes optimization, probability, systems, transportation/routing, quantitative finance, and independent work.</p></div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="gy-milestones" data-search-item>
+                <div class="gy-card-title">Phase 3 milestones</div>
+                <div class="gy-ms-list">
+                  <div class="gy-ms"><time>Nov 2</time><strong>Build phase begins after Dartmouth submission</strong><span>Post-submission</span></div>
+                  <div class="gy-ms"><time>Nov 15</time><strong>NaviSafi MVP routing works on OSM road data</strong><span>First version</span></div>
+                  <div class="gy-ms"><time>Dec 15</time><strong>Dartmouth ED1 decisions expected</strong><span>Decision window</span></div>
+                  <div class="gy-ms"><time>Jan 1</time><strong>Harvard, Yale, Princeton RD deadlines</strong><span>If needed</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-business" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker biz">Phase 4</div>
+                  <div class="gy-phase-title">Business</div>
+                  <div class="gy-phase-meta">Jan 1-Apr 30, 2027 · business and finance become Block 1, CS maintenance continues, discrete math returns, Akili Code moves toward real users.</div>
+                </div>
+                <div class="gy-stats">
+                  <div class="gy-stat"><span>Duration</span><strong>120</strong><small>days</small></div>
+                  <div class="gy-stat"><span>Study</span><strong>~840h</strong><small>7h/day</small></div>
+                  <div class="gy-stat"><span>Business</span><strong>360h</strong><small>Block 1</small></div>
+                  <div class="gy-stat"><span>CS</span><strong>240h</strong><small>maintenance</small></div>
+                  <div class="gy-stat"><span>Discrete</span><strong>240h</strong><small>logic + graphs</small></div>
+                </div>
+              </div>
+
+              <div class="gy-grid">
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-card-title">Daily schedule · Mon-Sat</div>
+                    <div class="gy-day">
+                      <div class="gy-block biz"><div class="gy-time">08:00</div><div class="gy-task"><strong>Business + finance <span>3h</span></strong><p>Corporate finance, VC, investing, real estate, marketing.</p></div></div>
+                      <div class="gy-block cs"><div class="gy-time">11:15</div><div class="gy-task"><strong>CS maintenance <span>2h</span></strong><p>One LeetCode/day plus Akili Code build and portfolio finalization.</p></div></div>
+                      <div class="gy-block math"><div class="gy-time">14:15</div><div class="gy-task"><strong>Discrete mathematics <span>2h</span></strong><p>Logic, proofs, sets, combinatorics, graph theory.</p></div></div>
+                      <div class="gy-block creative"><div class="gy-time">16:30</div><div class="gy-task"><strong>Guitar/video <span>30m</span></strong><p>Full songs, improvisation, and edited content for Akili Code or project demos.</p></div></div>
+                      <div class="gy-block service"><div class="gy-time">Weekly</div><div class="gy-task"><strong>Service <span>4h</span></strong><p>Dog shelter volunteering and Red Cross activity become a stable weekly civic commitment.</p></div></div>
+                      <div class="gy-block home"><div class="gy-time">Daily</div><div class="gy-task"><strong>Home chores <span>30-45m</span></strong><p>Daily cleaning, meals help, laundry, errands, and Sunday reset.</p></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="gy-accordions">
+                  <details class="gy-detail" open data-search-item>
+                    <summary><div><strong>Business and finance rotation</strong><span>Monthly progression</span></div><span class="gy-pill">3h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>January</h4><p>Corporate finance: TVM, NPV, IRR, financial statements, ratios, WACC, CAPM, free cash flow.</p></div>
+                      <div class="gy-topic"><h4>February</h4><p>Entrepreneurship and startups: Lean Startup, MVPs, VC stages, term sheets, cap tables, SAFEs, unit economics.</p></div>
+                      <div class="gy-topic"><h4>March-April</h4><p>Investing, real estate, and marketing: equities, bonds, ETFs, portfolio theory, cap rates, NOI, mortgage amortization, STP, AIDA, B2B/B2C sales.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>CS maintenance + Akili Code</strong><span>150 LeetCode total and public project proof</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Daily floor</h4><p>Never drop below one LeetCode problem per day. Trees/graphs, binary search, divide and conquer, and mixed review.</p></div>
+                      <div class="gy-topic"><h4>Akili Code</h4><p>Free Kenyan coding education platform: Django, low-bandwidth design, user auth, progress tracking, interactive exercises, public GitHub documentation.</p></div>
+                    </div>
+                  </details>
+
+                  <details class="gy-detail" data-search-item>
+                    <summary><div><strong>Discrete mathematics</strong><span>COSC 30 equivalent</span></div><span class="gy-pill">2h/day</span></summary>
+                    <div class="gy-detail-body">
+                      <div class="gy-topic"><h4>Proofs and sets</h4><p>Propositional and predicate logic, direct proof, contradiction, contraposition, induction, set operations, relations, functions.</p></div>
+                      <div class="gy-topic"><h4>Combinatorics and graph theory</h4><p>Permutations, combinations, binomial coefficients, pigeonhole principle, paths, cycles, trees, bipartite graphs, Eulerian and Hamiltonian paths.</p></div>
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <div class="gy-milestones" data-search-item>
+                <div class="gy-card-title">Phase 4 milestones</div>
+                <div class="gy-ms-list">
+                  <div class="gy-ms"><time>Jan 31</time><strong>Corporate finance module complete</strong><span>TVM, NPV, WACC</span></div>
+                  <div class="gy-ms"><time>Feb 28</time><strong>Entrepreneurship module complete</strong><span>unit economics</span></div>
+                  <div class="gy-ms"><time>Mar 31</time><strong>Investing module complete</strong><span>DCF, portfolio theory</span></div>
+                  <div class="gy-ms"><time>Apr 15</time><strong>Akili Code MVP onboards first Kenyan students</strong><span>platform launch</span></div>
+                  <div class="gy-ms"><time>Apr 30</time><strong>Gap year complete</strong><span>University ready</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-research" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker app">Research sub-page</div>
+                  <div class="gy-phase-title">Dartmouth Research Bank</div>
+                  <div class="gy-phase-meta">This preserves the previous schedule's research sub-page, with Dartmouth as the default story and Princeton ORFE as the secondary option.</div>
+                </div>
+              </div>
+
+              <div class="gy-research-grid">
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-kicker app">Early Decision · Dream school · Binding first choice</div>
+                    <div class="gy-phase-title">Dartmouth College · CS modified with Economics</div>
+                    <p class="gy-copy">Dartmouth is the lead story: small-college teaching, flexible D-Plan rhythm, and a modified CS+Economics degree that lets you build technical systems while understanding the markets they enter. That is exactly the Akili Code question: how to build useful educational technology for African contexts with both engineering rigor and economic judgment.</p>
+                    <details class="gy-detail" open>
+                      <summary><div><strong>Why Dartmouth CS + Economics</strong><span>A technically serious degree that never loses sight of real markets</span></div><span class="gy-pill">core</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>CS side</h4><p>Algorithms, data structures, systems, HCI, and applied ML: the engineering foundation for turning Akili Code from content into a durable education product.</p></div>
+                        <div class="gy-topic"><h4>Economics side</h4><p>Microeconomics, econometrics, markets, and development-facing economic reasoning: the framework for pricing, adoption, incentives, and access.</p></div>
+                        <div class="gy-topic"><h4>Application sentence</h4><p>Dartmouth is where Immanuel can turn a self-taught builder profile into a deliberate CS+Economics education: rigorous enough for systems work, flexible enough for Kenya leave-term projects, and intimate enough for faculty mentorship.</p></div>
+                      </div>
+                    </details>
+
+                    <details class="gy-detail">
+                      <summary><div><strong>Faculty to research</strong><span>Specific names signal genuine engagement</span></div><span class="gy-pill">note bank</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>Prasad Jayanti</h4><p>Algorithms, distributed computing, theory of computation. Strong fit for a builder thinking in graphs and distributed access.</p></div>
+                        <div class="gy-topic"><h4>David Kotz</h4><p>Systems, mobile computing, security, health technology. Useful for low-bandwidth, real-user infrastructure framing.</p></div>
+                        <div class="gy-topic"><h4>Thomas Cormen</h4><p>Algorithms education and the CLRS tradition. Connects Dartmouth CS to Akili Code as a teaching project.</p></div>
+                        <div class="gy-topic"><h4>Eric Zitzewitz</h4><p>Behavioral economics, financial economics, prediction markets. Gives the economics half substance around adoption and information problems.</p></div>
+                      </div>
+                    </details>
+
+                    <details class="gy-detail">
+                      <summary><div><strong>Courses and programs to reference</strong><span>Curriculum specificity for essays</span></div><span class="gy-pill">essay material</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>Courses</h4><p>COSC 10, COSC 30, COSC 50, ECON 21, ECON 26. Tie each course to the technical product, the economics of access, or the builder-to-founder arc.</p></div>
+                        <div class="gy-topic"><h4>D-Plan + DCSI</h4><p>Use a leave term to return to Kenya, extend the routing or education platform, and seek Dartmouth Center for Social Impact support for a real social-sector deliverable.</p></div>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="gy-card" data-search-item>
+                  <div class="gy-card-inner">
+                    <div class="gy-kicker" style="background: var(--princeton-bg); color: var(--princeton);">Secondary application · ORFE</div>
+                    <div class="gy-phase-title">Princeton University · ORFE</div>
+                    <p class="gy-copy">Princeton remains a strong second-choice story: applied mathematics, probability, optimization, and financial modeling connect naturally to the routing engine project and Akili Code's systems-builder direction. It supports the Dartmouth-first plan; it does not replace it.</p>
+                    <details class="gy-detail" open>
+                      <summary><div><strong>Why ORFE fits</strong><span>Applied math for real systems</span></div><span class="gy-pill">secondary</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>Strategic fit</h4><p>ORFE connects math to markets, logistics, networks, uncertainty, and financial engineering. NaviSafi is a natural operations research proof point.</p></div>
+                        <div class="gy-topic"><h4>Distinct from Dartmouth</h4><p>Princeton emphasizes ORFE independent work, operations research, and quantitative finance; Dartmouth emphasizes modified CS+Econ, faculty access, and D-Plan flexibility.</p></div>
+                      </div>
+                    </details>
+                    <details class="gy-detail">
+                      <summary><div><strong>Faculty and course research</strong><span>One deep-read per professor</span></div><span class="gy-pill">note bank</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>Faculty</h4><p>Rene Carmona for financial mathematics, Mykhaylo Shkolnikov for probability and stochastic processes, Matias Cattaneo for statistics/econometrics, Alain Kornhauser for transportation systems.</p></div>
+                        <div class="gy-topic"><h4>Courses</h4><p>ORF 201, ORF 309, ORF 311, ORF 350. Capture why each course genuinely matters to your goals before drafting the "Why Princeton" essay.</p></div>
+                      </div>
+                    </details>
+                    <details class="gy-detail">
+                      <summary><div><strong>Timeline accuracy</strong><span>Keep the secondary plan clean</span></div><span class="gy-pill">policy</span></summary>
+                      <div class="gy-detail-body">
+                        <div class="gy-topic"><h4>Application logic</h4><p>Use Regular Decision if Dartmouth is the ED school. Do not run Princeton SCEA and Dartmouth ED together. If Dartmouth admits, withdraw pending applications as required.</p></div>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-service" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker service">Service + home</div>
+                  <div class="gy-phase-title">Volunteering, Chores, and Responsibility Rhythm</div>
+                  <div class="gy-phase-meta">This adds civic service and home contribution to the gap-year plan without letting them swallow the Dartmouth ED priority.</div>
+                </div>
+                <div class="gy-stats">
+                  <div class="gy-stat"><span>Dog shelter</span><strong>2-3h</strong><small>weekly shift</small></div>
+                  <div class="gy-stat"><span>Red Cross</span><strong>1-2h</strong><small>training/service</small></div>
+                  <div class="gy-stat"><span>Home</span><strong>30m</strong><small>daily chores</small></div>
+                  <div class="gy-stat"><span>Log</span><strong>10m</strong><small>reflection</small></div>
+                  <div class="gy-stat"><span>Protect</span><strong>ED</strong><small>Dartmouth first</small></div>
+                </div>
+              </div>
+
+              <div class="gy-service-grid">
+                <div class="gy-map-card" data-search-item>
+                  <h3>Dog Shelter Volunteering</h3>
+                  <p>Build a consistent Saturday or Sunday shift: cleaning kennels, feeding, walking dogs, socializing nervous animals, supporting adoption events, and helping with photos or short videos when allowed.</p>
+                  <div class="gy-tags"><span>animal care</span><span>discipline</span><span>empathy</span><span>weekly proof</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Red Cross Volunteering</h3>
+                  <p>Start with orientation and training, then move into first-aid learning, blood-drive support, youth outreach, disaster-preparedness education, or admin/logistics support depending on local availability.</p>
+                  <div class="gy-tags"><span>service</span><span>first aid</span><span>community</span><span>leadership</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Daily Home Chores</h3>
+                  <p>Keep a non-negotiable 30-minute chore block: dishes, laundry, room reset, sweeping/mopping, meal prep, errands, or helping younger siblings/family before evening rest.</p>
+                  <div class="gy-tags"><span>daily reset</span><span>family</span><span>order</span><span>consistency</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Weekly Rhythm</h3>
+                  <p>Monday-Friday: 30 minutes chores after study. Wednesday evening: Red Cross training/admin when scheduled. Saturday: dog shelter shift. Sunday: home reset and reflection log.</p>
+                  <div class="gy-tags"><span>Mon-Fri chores</span><span>Wed Red Cross</span><span>Sat shelter</span><span>Sun reset</span></div>
+                </div>
+              </div>
+
+              <div class="gy-milestones" data-search-item>
+                <div class="gy-card-title">Service milestones</div>
+                <div class="gy-ms-list">
+                  <div class="gy-ms"><time>Jul 2026</time><strong>Contact two dog shelters and one Red Cross branch</strong><span>availability check</span></div>
+                  <div class="gy-ms"><time>Aug 2026</time><strong>Complete first four service shifts</strong><span>habit formed</span></div>
+                  <div class="gy-ms"><time>Oct 2026</time><strong>Keep service light during ED final polish</strong><span>Dartmouth priority</span></div>
+                  <div class="gy-ms"><time>Dec 2026</time><strong>Write one service reflection for updates/interviews</strong><span>evidence</span></div>
+                  <div class="gy-ms"><time>Apr 2027</time><strong>Have a sustained service record, not a one-off activity</strong><span>character proof</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gy-panel" id="gy-map" role="tabpanel">
+              <div class="gy-phase-head" data-search-item>
+                <div>
+                  <div class="gy-kicker math">Full curriculum map</div>
+                  <div class="gy-phase-title">All Modules Across the Gap Year</div>
+                  <div class="gy-phase-meta">Every major academic, technical, application, service, and home-responsibility strand in one place.</div>
+                </div>
+              </div>
+
+              <div class="gy-map-grid">
+                <div class="gy-map-card" data-search-item>
+                  <h3>Mathematics</h3>
+                  <p>Single-variable calculus, linear algebra, probability and statistics, discrete mathematics, and post-gap multivariable calculus deferred to Dartmouth.</p>
+                  <div class="gy-tags"><span>Phase 1</span><span>Phase 2</span><span>Phase 3</span><span>Phase 4</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Computer Science</h3>
+                  <p>Python, OOP, data structures, algorithms, graph traversal, Dijkstra, dynamic programming, LeetCode 150, NaviSafi, and Akili Code.</p>
+                  <div class="gy-tags"><span>COSC 1</span><span>COSC 10</span><span>COSC 30</span><span>COSC 31</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Dartmouth Application</h3>
+                  <p>Common App, Dartmouth supplements, activities list, CSS Profile, recommendations, faculty/course research, D-Plan, DCSI, and ED submission.</p>
+                  <div class="gy-tags"><span>ED1</span><span>Nov 1</span><span>CS+Econ</span><span>D-Plan</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Economics and Business</h3>
+                  <p>Microeconomics, econometrics, corporate finance, startup building, investing, real estate, marketing, and business model thinking for Akili Code.</p>
+                  <div class="gy-tags"><span>ECON 10</span><span>finance</span><span>startups</span><span>markets</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Creative Output</h3>
+                  <p>Guitar, video editing, project demos, Akili Code clips, portfolio storytelling, and habit-based creative improvement.</p>
+                  <div class="gy-tags"><span>guitar</span><span>editing</span><span>portfolio</span><span>publishing</span></div>
+                </div>
+                <div class="gy-map-card" data-search-item>
+                  <h3>Service and Home</h3>
+                  <p>Dog shelter volunteering, Red Cross training/service, daily home chores, Sunday reset, and reflection logs for character evidence.</p>
+                  <div class="gy-tags"><span>dog shelter</span><span>Red Cross</span><span>chores</span><span>reflection</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            (function () {
+              const deadline = new Date("2026-11-01T00:00:00");
+              const today = new Date();
+              today.setHours(0, 0, 0, 0);
+              const count = Math.max(0, Math.ceil((deadline - today) / 86400000));
+              const countEl = document.getElementById("ed-count");
+              if (countEl) countEl.textContent = String(count);
+
+              const tabs = Array.from(document.querySelectorAll("[data-gy-tab]"));
+              const panels = Array.from(document.querySelectorAll(".gy-panel"));
+
+              tabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                  const target = "gy-" + tab.dataset.gyTab;
+                  tabs.forEach((item) => item.setAttribute("aria-selected", item === tab ? "true" : "false"));
+                  panels.forEach((panel) => panel.classList.toggle("is-active", panel.id === target));
+                });
+              });
+            })();
+          </script>
         </section>
       </main>
       <footer class="footer">Static guide site with shared theme, search, navigation, and progress persistence.</footer>
